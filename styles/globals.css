@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .topnav{
+      @apply py-[4px] px-[8px] sm:py-2 sm:px-6 text-center hover:bg-[#E7D6CE] rounded-full 
+      transition duration-150 ease-out hover:ease-in cursor-pointer
+    }
+    
+    .fitter-action{
+     @apply hover:text-white transition duration-150 ease-out cursor-pointer
+    }
+    .offer{
+      @apply bg-[#FF0101] w-[200px] sm:w-[250px] text-center text-white rounded-md font-semibold
+       text-xs md:text-sm py-1 sm:py-2
+    }
+    .menunav{
+      @apply  hover:-translate-x-2 hover:opacity-50  transition duration-150 ease-out cursor-pointer
+    }
+    .phonemenu{
+      @apply inline sm:hidden
+    }
+    .FooterBtn{
+      @apply text-[#333333] font-medium text-xs sm:text-sm text-center shadow-lg hover:shadow-none bg-[#E7D6CE]
+       sm:max-w-xs rounded-full w-full py-1 sm:py-2 hover:text-white transition-all duration-300 ease-in
+    }
+    .DesignCon{
+      @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-10 max-w-7xl mx-auto
+    }
+    .header{
+      @apply flex flex-col space-y-3 md:space-y-4 lg:space-y-6
+    }
+    .modelbtn{
+      @apply bg-[#E7D6CE] text-[10px] font-semibold md:text-sm py-1 px-3 md:py-3 md:px-8 rounded-full shadow-lg hover:shadow-none transition-shadow duration-300 ease-out cursor-pointer
+    }
+    .spaceCon{
+     @apply flex flex-col space-y-4 sm:space-y-16 lg:space-y-24
+    }
+    .small-image{
+      @apply max-w-[60px] max-h-[100px] object-contain cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out
+    }
+    .twobuttons{
+      @apply text-xs text-[#FF0000] font-bold py-2 px-6 border-2 border-[#E7D6CE] 
+      rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer 
+    }
+    .inputfield{
+      @apply shadow-lg py-2 sm:py-3 pl-2 h-full w-full bg-[#F2F2F2] flex-1 flex items-center justify-start rounded-lg border-2 border-[#E8D7D0]
+    }
+    .info{
+      @apply text-xs md:text-sm font-semibold text-[#464646]
+    }
+    .socialicon2{
+      @apply bg-[#ff0000] text-white p-1 w-8 h-8 rounded-full shadow-md 
+    }
+}
+
+
+@media only screen and (min-width: 600px){
+  .swiper-button-next:after{
+    margin-right: 24px !important;
+  }
+  .swiper-button-prev:after{
+    margin-left: 24px !important;
+  }
+}
+
+.heightview{
+  height: calc(100vh - 80px)
+}
+.swiper-button-next:after, .swiper-button-prev:after{
+  color: white;
+  font-size: 24px !important;
+  font-weight: bold !important;
+  padding-right: 24px !important;
+  padding-left: 24px !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: white !important;
+}
+.socialicon{
+  color: white;
+  width: 24px;
+  height: 24px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  transition: box-shadow 0.5s ease-out;
+}
+.socialicon:hover{
+  box-shadow: none;
+}
+
+
