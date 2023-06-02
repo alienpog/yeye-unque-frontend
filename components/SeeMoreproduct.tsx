@@ -6,7 +6,7 @@ import { useAppDispatch } from '@/src/redux/hooks'
 
 interface props {
     id:number,
-    images?:[object]
+    images?:string[]
 }
 function SeeMoreproduct({id,images} : props) {
     const dispatch = useAppDispatch();

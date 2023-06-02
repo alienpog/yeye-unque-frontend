@@ -37,7 +37,7 @@ function ModelImage() {
 
           <div className="fixed inset-0 overflow-y-auto ">
              <Swiper className="flex w-full h-full item-center justify-center" navigation={true} pagination={true} loop={true} modules={[Navigation,Pagination]} > 
-                {products?.images?.map((product :any, index : number)=> (
+                {products?.images?.map((product :string, index : number)=> (
                   <SwiperSlide key={index} className='flex w-full item-center justify-center'>                  
                   <Transition.Child
                       as={Fragment}
@@ -48,9 +48,9 @@ function ModelImage() {
                       leaveFrom="opacity-100"
                       leaveTo="opacity-0"
                       >     
-                      <Dialog.Overlay className="w-full flex items-center justify-center">
+                      <Dialog.Overlay className="w-full h-full flex items-center justify-center">
                       {/* @ts-ignore */}
-                      <img src={product} alt={`${index}.${product}`} width={300}  className='shadow-lg'/>
+                      <img src={product} alt={`${index}.${product}`} key={index} width={300} height={400} className='shadow-lg object-contain'/>
                       </Dialog.Overlay>
                       </Transition.Child>
                   </SwiperSlide>
@@ -66,7 +66,8 @@ function ModelImage() {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                    >
-                    <Dialog.Overlay className="w-full max-w-md transform overflow-hidden rounded-2xl bg-[#9C0F0F] p-6 text-left align-middle shadow-2xl transition-all mx-12">
+                    <Dialog.Overlay className="w-full h-full flex items-center justify-center">
+                    <Dialog.Overlay className="w-full max-w-md h-auto transform overflow-hidden rounded-2xl bg-[#9C0F0F] p-6 text-left align-middle shadow-2xl transition-all mx-12">
                     <Dialog.Title >
                         <SectionHeader conheader='More Info' red />
                     </Dialog.Title>
@@ -80,6 +81,7 @@ function ModelImage() {
                         <div className='modelbtn' onClick= {() => {dispatch(closeitem()),router.push(`/productdetails/${products.id!}`)}} >Check Design</div>
                         <div className='modelbtn' onClick={()=>{dispatch(closeitem())}}>Close</div>
                     </Dialog.Overlay>
+                  </Dialog.Overlay>
                   </Dialog.Overlay>
                 </Transition.Child>
                 </SwiperSlide>

@@ -43,7 +43,7 @@ function NotLogin() {
                     </Dialog.Title>
                     <div className="mt-2">
                         <p className="text-xs md:text-sm text-white text-center">
-                        you need to log in with your Gmail so you can like and comment on each Design and we send the Latest Design to your Gmail with tips and tricks so you look unique anywhere you go! </p>
+                        you need to log in with your Gmail so you can like and comment on each Design and we will send you the Latest Design to your Gmail with tips and tricks so you look unique anywhere you go! </p>
                     </div>
 
                     <div className=" flex items-center justify-between mt-4">

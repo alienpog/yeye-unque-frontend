@@ -14,18 +14,18 @@ function HomePage() {
         <HeroSection/>
       </header>     
       <main className="spaceCon">
-      <Suspense fallback={<div className="flex items-center justify-center my-[200px]" ><img src="/images/logo-animi-red.gif" alt="loading-logo" 
-       className="w-10 object-contain " /></div>}>
+      <Suspense fallback={<div className="flex items-center justify-center my-[100px]" ><img src="/images/logo-animi-red.gif" alt="loading-logo" 
+       className="w-40 object-contain " /></div>}>
         <AllDesign/>
       </Suspense>
-      <Suspense fallback={<div className="flex items-center justify-center my-[200px]" ><img src="/images/logo-animi-red.gif" alt="loading-logo" 
-       className="w-10 object-contain " /></div>}>
+      <Suspense fallback={<div className="flex items-center justify-center my-[100px]" ><img src="/images/logo-animi-red.gif" alt="loading-logo" 
+       className="w-40 object-contain " /></div>}>
         {/* @ts-ignore */}
         <MostLiked/>
       </Suspense>
        <NoProblem/>
-       <Suspense fallback={<div className="flex items-center justify-center my-[200px]" ><img src="/images/logo-animi-red.gif" alt="loading-logo" 
-       className="w-10 object-contain " /></div>}>
+       <Suspense fallback={<div className="flex items-center justify-center my-[100px]" ><img src="/images/logo-animi-red.gif" alt="loading-logo" 
+       className="w-40 object-contain " /></div>}>
         {/* @ts-ignore */}
        <Testimonials/>
       </Suspense>

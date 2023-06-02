@@ -7,8 +7,8 @@ export interface Item{
     description: string,
     image: string,
     likescount?: number,
-    modelimages?: [object],
-    crop_images?: [object] 
+    modelimages?: string[],
+    crop_images?: string[] 
 }
 
 
@@ -24,8 +24,8 @@ export interface Item2{
     description: string,
     image: string,
     likescount?: number,
-    modelimages?: [object],
-    crop_images?: [object] 
+    modelimages?: string[],
+    crop_images?: string[] 
   }]
 }
 

@@ -4,7 +4,7 @@ import ProductItem from "./ProductItem"
 
 
 const quarydesign = async()=>{
- const res= await fetch('http://127.0.0.1:8000/mostliked/',{next:{revalidate: 5}})
+ const res= await fetch('http://127.0.0.1:8000/mostliked/',{next:{revalidate: 60*24}})
  const data: Item[]= await res.json()
  return data
 }

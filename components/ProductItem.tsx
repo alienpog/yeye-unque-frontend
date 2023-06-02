@@ -10,7 +10,7 @@ interface props {
   price: number,
   old_price: number | null,
   id: number,
-  modelimages?: [object],
+  modelimages?: string[],
   truecon:boolean
 }
 

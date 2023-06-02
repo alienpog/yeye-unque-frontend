@@ -11,10 +11,7 @@
     .fitter-action{
      @apply hover:text-white transition duration-150 ease-out cursor-pointer
     }
-    .offer{
-      @apply bg-[#FF0101] w-[200px] sm:w-[250px] text-center text-white rounded-md font-semibold
-       text-xs md:text-sm py-1 sm:py-2
-    }
+  
     .menunav{
       @apply  hover:-translate-x-2 hover:opacity-50  transition duration-150 ease-out cursor-pointer
     }

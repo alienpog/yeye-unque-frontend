@@ -5,6 +5,7 @@ import Image from "next/image"
 import MiniCon from './MiniCon';
 import Comments from './Comments';
 import LikeCon from './LikeCon';
+import { useRouter } from 'next/navigation';
 
 const sacramento = Sacramento({
     weight: '400',
@@ -18,7 +19,7 @@ const sacramento = Sacramento({
     old_price: number | null;
     description: string;
     image: string;
-    cropimages?: object[];
+    cropimages?: string[];
   }
   
   function ProductDetails({
@@ -30,6 +31,7 @@ const sacramento = Sacramento({
     old_price,
     cropimages,
   }: Item) {
+    const router =useRouter()
     const [activeImage, setActiveImage] = useState(image);
     return (
       <MiniCon>
@@ -47,18 +49,19 @@ const sacramento = Sacramento({
             />
             </div>
             <div className='flex space-x-2 items-center justify-start h-130 mt-2 overflow-y-hidden overflow-x-scroll scrollbar-thumb-rounded-md scrollbar-thumb-[#E7D6CE] scrollbar-thin'>
-            <Image src={image} alt={`${id}.${name}`} width={100} height={100} 
+            <img src={image} alt={`${id}.${name}`} width={100} height={100} loading='lazy'
             className='small-image'
             onClick={()=>{setActiveImage(image)}} />
             
             <>
-                {cropimages?.map((cropImage: any, index: number) => (
-                <Image
+                {cropimages?.map((cropImage: string, index: number) => (
+                <img
                     key={index}
                     src={cropImage}
                     alt={`${id}.${name}`}
                     height={100}
                     width={100}
+                    loading='lazy'
                     className='small-image'
                     onClick={()=>{setActiveImage(cropImage)}}/>
                 ))}
@@ -85,7 +88,7 @@ const sacramento = Sacramento({
                 </div>     
             </div> 
             <div className="text-xs bg-[#FF0000] text-white font-medium py-2 px-6 max-w-[150px]
-                rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer mb-2 ">
+                rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer mb-2 " onClick={()=>{router.push('/contact-us')}}>
                 Contact Us
             </div>   
         </div>
