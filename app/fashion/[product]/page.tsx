@@ -6,6 +6,7 @@ import TwoButtons from '@/components/TwoButtons';
 import { Item2 } from '@/product';
 import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation';
+import SectionHeader from '@/components/SectionHeader';
 
 interface props{
   params:{
@@ -47,6 +48,8 @@ function Products({params:{product}}:props){
  
     const randomProducts = products?.results.sort(() => Math.random() - 0.5)
     return (
+      <div className="flex flex-col gap-2 sm:gap-4 lg:gap-6 ">
+          <SectionHeader conheader="Our Design" red={false}/>
       <MiniCon>
         <div className='w-full flex items-center justify-between max-w-7xl mx-auto mb-2 sm:mb-4'>
         <h2 className='text-xs md:text-sm text-black font-bold'>Products</h2> 
@@ -60,6 +63,7 @@ function Products({params:{product}}:props){
        </div>
        <TwoButtons prev={products?.previous} next={products?.next} product={product}/>    
       </MiniCon>
+      </div>
     )
 }
 

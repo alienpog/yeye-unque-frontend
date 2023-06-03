@@ -2,6 +2,15 @@ import React from 'react'
 import SectionHeader from '@/components/SectionHeader'
 import MiniCon from '@/components/MiniCon'
 import Testimonials from '@/components/Testimonials'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+ title:{
+  absolute: 'about-us'
+ },
+ description: 'this is the about-us page'
+}
+
 
 function AboutUs() {
   return (

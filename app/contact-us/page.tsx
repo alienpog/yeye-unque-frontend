@@ -5,6 +5,7 @@ import IconBxlTiktok from "@/components/Icons/TikTok";
 import MiniCon from "@/components/MiniCon";
 import SectionHeader from "@/components/SectionHeader";
 import { InboxArrowDownIcon, MapPinIcon, PhoneArrowDownLeftIcon } from "@heroicons/react/24/solid";
+import { Metadata } from "next";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
@@ -13,6 +14,13 @@ import { ClassicSpinner } from "react-spinners-kit";
 interface User{
     name: string | null ;
     gmail: string | null;
+}
+
+export const metadata: Metadata = {
+    robots:{
+     index: false,
+     nocache: true,
+    }
 }
 
 function ContactUs() {

@@ -1,7 +1,6 @@
 'use client'
 import { Sacramento } from 'next/font/google';
 import { useState } from "react";
-import Image from "next/image"
 import MiniCon from './MiniCon';
 import Comments from './Comments';
 import LikeCon from './LikeCon';
