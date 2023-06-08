@@ -16,7 +16,7 @@ export const product = createSlice({
       // const item.id = action.payload.id;
       // const item.images = action.payload.images
       state.value ={
-        id:action.payload.id,
+        slug:action.payload.slug,
         images:action.payload.images
       }
     },

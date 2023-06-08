@@ -5,14 +5,14 @@ import {openitem} from "@/src/redux/slices/openSlice";
 import { useAppDispatch } from '@/src/redux/hooks'
 
 interface props {
-    id:number,
+    slug?:string,
     images?:string[]
 }
-function SeeMoreproduct({id,images} : props) {
+function SeeMoreproduct({slug,images} : props) {
     const dispatch = useAppDispatch();
 
     function open(){
-        dispatch(openProduct({id,images}))
+        dispatch(openProduct({slug,images}))
         dispatch(openitem())
     }
   return (

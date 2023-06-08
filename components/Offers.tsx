@@ -15,13 +15,22 @@ interface props{
 
 const actions = [
   {
-    "offer":"Get Your Design In 24hrs"
+    "offer":"Get Your Design In 48hrs"
   },
   {
-    "offer":"Delivery All Around The World"
+    "offer":"10% OFF Your First Oder"
   },
   {
-    "offer":"Look Great and Unique"
+    "offer":"Men & Kids Service available"
+  },
+  {
+    "offer":"Delivery World Wild"
+  },
+  {
+    "offer":"Unluck Your Inner Beauty"
+  },
+  {
+    "offer":"Like and Comment"
   },
 ]
 

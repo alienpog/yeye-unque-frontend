@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 
 const sacramento = Sacramento({
     weight: '400',
-    subsets: [ 'latin-ext']
+    subsets: [ 'latin-ext','latin']
   });
 
   interface Item {
@@ -16,6 +16,7 @@ const sacramento = Sacramento({
     name: string;
     price: number;
     old_price: number | null;
+    description_span?: string;
     description: string;
     image: string;
     cropimages?: string[];
@@ -26,6 +27,7 @@ const sacramento = Sacramento({
     name,
     image,
     description,
+    description_span,
     price,
     old_price,
     cropimages,
@@ -35,18 +37,15 @@ const sacramento = Sacramento({
     return (
       <MiniCon>
         <div className='max-w-5xl mx-auto sm:h-[100svh] mt-4'>
-        <h1 className={`${sacramento.className} text-xs md:text-lg`}>{name}</h1>
+        <h1 className={`${sacramento.className} text-lg md:text-2xl`}>{name}</h1>
       <div className='grid grid-cols-1 sm:grid-cols-2 items-start gap-x-8'>
         
         <div>
-            
-            <div className='' >
             <img
                 src={activeImage}
                 alt={`${id}.${name}`}
                 className=" w-full max-h-[400px]"
             />
-            </div>
             <div className='flex space-x-2 items-center justify-start h-130 mt-2 overflow-y-hidden overflow-x-scroll scrollbar-thumb-rounded-md scrollbar-thumb-[#E7D6CE] scrollbar-thin'>
             <img src={image} alt={`${id}.${name}`} width={100} height={100} loading='lazy'
             className='small-image'
@@ -72,7 +71,7 @@ const sacramento = Sacramento({
             <div className='flex flex-col-reverse sm:flex-col gap-2 sm:gap-3 mt-2 sm:mt-0'>
             <p className='text-[11px] md:text-sm text-[#323232]'>
             {description}
-            <span className='text-black font-semibold'>Hello</span>
+            <span className='text-black font-semibold'>{description_span}</span>
             </p>
             <LikeCon id={id} details/>
             </div>

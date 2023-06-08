@@ -55,16 +55,35 @@ function Products({params:{product}}:props){
         <h2 className='text-xs md:text-sm text-black font-bold'>Products</h2> 
         <span className='text-xs md:text-sm text-black font-bold'>{products?.count}</span>
         </div>
-        <div className='DesignCon'>
-        {randomProducts?.map(({id,name,image,price,old_price,modelimages})=>(
-          <ProductItem key={id} id={id} name={name} image={image} price={price} old_price={old_price} modelimages={modelimages} truecon={false}/>
-        ))}
-    
-       </div>
-       <TwoButtons prev={products?.previous} next={products?.next} product={product}/>    
+        {products?.count != 0 ?(
+          <>
+          <div className='DesignCon'>
+          { randomProducts?.map(({id,name,image,price,old_price,modelimages})=>(
+            <ProductItem key={id} id={id} name={name} image={image} price={price} old_price={old_price} modelimages={modelimages} truecon={false}/>
+          )) }
+         </div>
+         <TwoButtons prev={products?.previous} next={products?.next} product={product}/>
+          </>      
+        ):
+        (
+          <div className=' grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto my-40 items-center justify-center gap-12 md:gap-24'>
+            <img src='/images/no_data@4x.png' width={100} height={100} alt='no product' className='w-full h-full object-contain'/>
+            <div className='flex flex-col space-y-4 md:space-y-8 text-left'>
+            <h2 className='text-2xl md:text-5xl text-black font-bold'> Product coming soon...</h2>
+             <div className="text-xs text-white bg-[#ff0000] font-bold py-2 px-6 rounded-full text-center shadow-md hover:shadow-none
+              transition-all duration-300 ease-in-out cursor-pointer w-64 "onClick={()=>router.push("/fashion/allproducts")}>
+               All Designs
+            </div>
+          </div>
+          </div>
+         )
+        } 
+        
       </MiniCon>
       </div>
     )
 }
 
 export default Products
+
+

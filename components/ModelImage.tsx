@@ -78,7 +78,7 @@ function ModelImage() {
                     </Dialog.Overlay>
 
                     <Dialog.Overlay className=" flex items-center justify-between mt-4">
-                        <div className='modelbtn' onClick= {() => {dispatch(closeitem()),router.push(`/productdetails/${products.id!}`)}} >Check Design</div>
+                        <div className='modelbtn' onClick= {() => {dispatch(closeitem()),router.push(`/productdetails/${products.slug!}`)}} >Check Design</div>
                         <div className='modelbtn' onClick={()=>{dispatch(closeitem())}}>Close</div>
                     </Dialog.Overlay>
                   </Dialog.Overlay>

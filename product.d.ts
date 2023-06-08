@@ -5,10 +5,14 @@ export interface Item{
     price: number,
     old_price: number | null,
     description: string,
+    description_span?: string;
     image: string,
     likescount?: number,
     modelimages?: string[],
-    crop_images?: string[] 
+    crop_images?: string[],
+    slug?: string,
+    Meta_Title?: string,
+    Meta_description?: string,
 }
 
 
@@ -22,10 +26,12 @@ export interface Item2{
     price: number,
     old_price: number | null,
     description: string,
+    description_span?: string;
     image: string,
     likescount?: number,
     modelimages?: string[],
-    crop_images?: string[] 
+    crop_images?: string[],
+    slug?:string 
   }]
 }
 

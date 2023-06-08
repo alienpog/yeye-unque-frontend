@@ -17,10 +17,7 @@ interface User{
 }
 
 export const metadata: Metadata = {
-    robots:{
-     index: false,
-     nocache: true,
-    }
+   
 }
 
 function ContactUs() {
