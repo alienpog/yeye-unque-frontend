@@ -5,6 +5,7 @@ import MiniCon from './MiniCon';
 import Comments from './Comments';
 import LikeCon from './LikeCon';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const sacramento = Sacramento({
     weight: '400',
@@ -47,19 +48,18 @@ const sacramento = Sacramento({
                 className=" w-full max-h-[400px]"
             />
             <div className='flex space-x-2 items-center justify-start h-130 mt-2 overflow-y-hidden overflow-x-scroll scrollbar-thumb-rounded-md scrollbar-thumb-[#E7D6CE] scrollbar-thin'>
-            <img src={image} alt={`${id}.${name}`} width={100} height={100} loading='lazy'
+            <Image src={image} alt={`${id}.${name}`} width={100} height={100}
             className='small-image'
             onClick={()=>{setActiveImage(image)}} />
             
             <>
                 {cropimages?.map((cropImage: string, index: number) => (
-                <img
+                <Image
                     key={index}
                     src={cropImage}
                     alt={`${id}.${name}`}
                     height={100}
                     width={100}
-                    loading='lazy'
                     className='small-image'
                     onClick={()=>{setActiveImage(cropImage)}}/>
                 ))}

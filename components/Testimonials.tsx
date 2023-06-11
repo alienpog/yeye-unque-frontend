@@ -24,7 +24,7 @@ async function Testimonials() {
         <MiniCon>    
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
                 gap-2 md:gap-4 lg:gap-10 max-w-6xl mx-auto mb-9">
-                 {testimonials.splice(0,6).map((item, index) => (
+                 {randomTestimonials.splice(0,6).map((item, index) => (
                    <Testimonial key={index} comment={item.client_comment} image={item.client_picture} name ={item.client_name} id={index} />
                  ))}
         

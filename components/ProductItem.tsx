@@ -3,6 +3,7 @@ import Comments from './Comments'
 import SeeMoreproduct from './SeeMoreproduct'
 import { useRouter } from 'next/navigation';
 import LikeCon from './LikeCon'
+import Image from 'next/image';
 
 interface props {
   name: string,
@@ -32,7 +33,7 @@ function ProductItem({id, name, image, price, modelimages, old_price, slug, true
             <LikeCon id={id} details={false}/>
         </div>
         <div className={`h-[300px] ${truecon && "w-[320px]"}`}>
-          <img src={image} alt={name} loading='lazy'
+          <Image src={image} alt={name} width={100} height={100}
           className=' h-full w-full object-cover'/>
         </div>
         </div>
