@@ -13,6 +13,7 @@ import { RootState } from '@/src/redux/store'
 import {closeitem } from "@/src/redux/slices/openSlice";
 import { useAppDispatch } from "../src/redux/hooks";
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 function ModelImage() {
   const open = useAppSelector((state :RootState) => state.openReducer.value);
@@ -50,7 +51,7 @@ function ModelImage() {
                       >     
                       <Dialog.Overlay className="w-full h-full flex items-center justify-center">
                       {/* @ts-ignore */}
-                      <img src={product} alt={`${index}.${product}`} key={index} width={300} height={400} className='shadow-lg object-contain'/>
+                      <Image src={product} alt={`${product}.${index}`} key={index} width={300} height={400} className='shadow-lg object-contain'/>
                       </Dialog.Overlay>
                       </Transition.Child>
                   </SwiperSlide>

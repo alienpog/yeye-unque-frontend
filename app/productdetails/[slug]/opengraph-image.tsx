@@ -15,11 +15,11 @@ interface props {
     }
 }
 
-import React from 'react'
 
-async function fetchDeta (slug:string) {
-    const res = await fetch(`http://127.0.0.1:8000/product/${slug}`);
+async function fetchDeta (slug : string) {
+    const res = await fetch(`http://127.0.0.1:8000/product/${slug}`, { cache:"no-cache"});
     const data : Item = await res.json();
+    console.log("slug>>>>>>",slug)
     return data
 }
  
