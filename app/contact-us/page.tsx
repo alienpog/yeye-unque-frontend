@@ -31,8 +31,9 @@ function ContactUs() {
     // get data at first load
     const {data: session}= useSession()
     useEffect(()=>{
+        console.log("session>>>>>>",session)
         async function getUserData(){
-            const res =await fetch("http://127.0.0.1:8000/gettingform/",
+            const res =await fetch(`https://yeye-unique-backend-production.up.railway.app/gettingform/`,
             {
                 method: "POST",
                 headers: {
@@ -43,6 +44,7 @@ function ContactUs() {
             const data: User = await res.json()
             Setname(data?.name)
             Setemail(data?.gmail)
+            console.log("name>>>>>>",data?.name)
         }
         getUserData()  
     },[session])
@@ -58,7 +60,7 @@ function ContactUs() {
         const domain = input_email.substring(input_email.lastIndexOf("@"))
         if(domain == "@gmail.com"){
             if(number.match(phoneno)){
-                const res= await fetch("http://127.0.0.1:8000/postingform/",
+                const res= await fetch(`https://yeye-unique-backend-production.up.railway.app/postingform/`,
                 {
                     method: "POST",
                     headers: {
@@ -133,20 +135,20 @@ function ContactUs() {
         <div className="flex flex-col items-start space-y-4 md:space-y-7">
             <div className="flex space-x-2 items-center">
                 <MapPinIcon className="w-4 h-4 text-[#ff0000]"/>
-                <p className="info">Shop location address fjejeejeiejewe ejfefejfwefewfefjeeefjiee</p>
+                <p className="info">Shop location address </p>
             </div>
             <div className="flex space-x-2 items-center">
                 <InboxArrowDownIcon className="w-4 h-4 text-[#ff0000]"/>
-                <p className="info">Brand Email Link</p>
+                <p className="info">abbey@yeyeunique.com</p>
             </div>
             <div className="flex space-x-2 items-center">
                 <PhoneArrowDownLeftIcon className="w-4 h-4 text-[#ff0000]"/>
-                <p className="info">+234 90331433445</p>
+                <p className="info">+234 701 4074 694</p>
             </div>
-            <div className="w-full flex items-center justify-center space-x-6 mt-3 mb-4">
-                <Link href=''><IconBxlInstagramAlt className="socialicon2"/></Link>
-                <Link href=''><IconBxlTiktok className="socialicon2"/></Link>
-                <Link href=''><IconBxlFacebookCircle className="socialicon2"/></Link>
+            <div className="w-full flex items-center justify-start space-x-6 mt-3 mb-4">
+                {/* <Link href=''><IconBxlInstagramAlt className="socialicon2"/></Link> */}
+                <Link href='https://www.tiktok.com/@yeye_unique?lang=en'><IconBxlTiktok className="socialicon2"/></Link>
+                {/* <Link href=''><IconBxlFacebookCircle className="socialicon2"/></Link> */}
             </div>
         </div>
      </div>

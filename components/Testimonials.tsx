@@ -9,7 +9,7 @@ interface testimonials {
 }
 
 const fetchtestimonials = async() => {
- const res = await fetch("http://127.0.0.1:8000/testimonials/",{cache:"no-cache"})
+ const res = await fetch(`https://yeye-unique-backend-production.up.railway.app/testimonials/`,{cache:"no-cache"})
  const data : testimonials[] = await res.json()
  return data
 }

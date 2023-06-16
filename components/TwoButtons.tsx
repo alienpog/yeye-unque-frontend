@@ -9,8 +9,8 @@ interface props{
 }
 
 function TwoButtons({prev, next,product}: props) {
-  const changeprev = prev?.replace("http://127.0.0.1:8000/"+product+"/?page=","")
-  const changenext = next?.replace("http://127.0.0.1:8000/"+product+"/?page=","")
+  const changeprev = prev?.replace("http://yeye-unique-backend-production.up.railway.app/"+product+"/?page=","")
+  const changenext = next?.replace("http://yeye-unique-backend-production.up.railway.app/"+product+"/?page=","")
   const router =useRouter()
   
   return (

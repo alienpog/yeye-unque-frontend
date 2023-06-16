@@ -24,12 +24,12 @@ function Products({params:{product}}:props){
   // changing the url backend later
   useEffect(()=>{
     const queryproducts = async() => {
-      if(page == 'http://127.0.0.1:8000/'+product+'/'){
-        return  (page.replace('http://127.0.0.1:8000/'+product+'/',''),
+      if(page == 'http://yeye-unique-backend-production.up.railway.app/'+product+'/'){
+        return  (page.replace('http://yeye-unique-backend-production.up.railway.app/'+product+'/',''),
                  router.replace('/fashion/'+product)
         )          
       }
-      const url = page?'http://127.0.0.1:8000/'+product+'/?page='+ page : 'http://127.0.0.1:8000/'+product;
+      const url = page?"https://yeye-unique-backend-production.up.railway.app/"+product+"/?page="+ page : 'https://yeye-unique-backend-production.up.railway.app/'+product;
       const res = await fetch(url);
       const data  = await res.json();
       Setproduct(data)
@@ -58,8 +58,8 @@ function Products({params:{product}}:props){
         {products?.count != 0 ?(
           <>
           <div className='DesignCon'>
-          { randomProducts?.map(({id,name,image,price,old_price,modelimages})=>(
-            <ProductItem key={id} id={id} name={name} image={image} price={price} old_price={old_price} modelimages={modelimages} truecon={false}/>
+          { randomProducts?.map(({id,name,image,price,old_price,modelimages, slug})=>(
+            <ProductItem key={id} id={id} name={name} image={image} price={price} old_price={old_price} modelimages={modelimages} slug={slug} truecon={false}/>
           )) }
          </div>
          <TwoButtons prev={products?.previous} next={products?.next} product={product}/>

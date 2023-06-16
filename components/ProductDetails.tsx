@@ -71,7 +71,7 @@ const sacramento = Sacramento({
             <div className='flex flex-col-reverse sm:flex-col gap-2 sm:gap-3 mt-2 sm:mt-0'>
             <p className='text-[11px] md:text-sm text-[#323232]'>
             {description}
-            <span className='text-black font-semibold'>{description_span}</span>
+            <span className='text-black font-semibold'>{" "}{description_span}</span>
             </p>
             <LikeCon id={id} details/>
             </div>

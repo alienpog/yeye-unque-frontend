@@ -4,7 +4,7 @@ import ProductItem from "./ProductItem"
 
 
 const quarydesign = async()=>{
- const res= await fetch('http://127.0.0.1:8000/mostliked/',{cache: "no-cache"})
+ const res= await fetch(`${process.env.BACKEND_URL}/mostliked/`,{cache: "no-cache"})
  const data: Item[]= await res.json()
  return data
 }
@@ -17,9 +17,9 @@ async function MostLiked() {
         <SectionHeader conheader="Most Liked Design" red={false}/>
         <div className="flex items-start justify-start space-x-2 md:space-x-4 lg:space-x-8 pl-2 pb-3 sm:pl-3 md:pl-4 md:pb-5 lg:pl-6 lg:pb-6
          overflow-x-scroll scrollbar-thumb-rounded-md scrollbar-thumb-[#E7D6CE] scrollbar-thin ">
-         {LikedDesign.splice(0,7).map(({id,image,price,modelimages,old_price, name})=>(
+         {LikedDesign.splice(0,7).map(({id,image,price,modelimages,old_price, name, slug})=>(
           <ProductItem key={id} id= {id} image={image} 
-           price={price} modelimages={modelimages} name={name} old_price={old_price} truecon />  
+           price={price} modelimages={modelimages} name={name} old_price={old_price} truecon slug={slug}/>  
          ))}
         </div>
     </div>

@@ -1,8 +1,7 @@
 'use client'
-import logo from"@/public/images/yeye-unique-logo.png";
+
 import {Bars3Icon, AdjustmentsVerticalIcon } from '@heroicons/react/24/solid'
 import Link  from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import Offers from "./Offers";
 import MenuModel from "./MenuModel";
@@ -105,11 +104,17 @@ function NavgationTab() {
             <Bars3Icon className=" h-6 object-contain text-black lg:hidden cursor-pointer" onClick={()=>{MenuSetActive2(true)}}/>
         </div>       
       </nav>
-      <div className={`hidden w-full md:flex bg-[#E7D6CE]  text-[#010101] text-xm font-medium shadow-lg ${Active? 'opacity-1 h-[42px] ':'opacity-0 h-0'} transition-all duration-300 ease-in-out `}>
-        <div className="flex max-w-lg w-full mx-auto items-center justify-center space-x-12 ">
-            <p className= {`fitter-action ${pathname =="/fashion/females" && "text-white"}`} onClick={()=>(router.push('/fashion/females'))}>Women</p>
-            <p className= {`fitter-action ${pathname =="/fashion/males" && "text-white"}`} onClick={()=>(router.push('/fashion/males'))}>men</p>
-            <p className= {`fitter-action ${pathname =="/fashion/kids" && "text-white"}`} onClick={()=>(router.push('/fashion/kids'))}>kids</p>
+      <div className={`hidden w-full md:flex bg-[#E7D6CE]  text-[#010101] text-xs lg:text-sm shadow-lg ${Active? 'opacity-1 h-[42px] ':'opacity-0 h-0'} transition-all duration-300 ease-in-out `}>
+        <div className="flex max-w-6xl w-full mx-auto items-center justify-center space-x-6  lg:space-x-8">
+            <p className= {`fitter-action ${pathname =="/fashion/females" && "text-white"}`} onClick={()=>(router.push('/fashion/females'))}>women-design</p>
+            <p className= {`fitter-action ${pathname =="/fashion/males" && "text-white"}`} onClick={()=>(router.push('/fashion/males'))}>men-design</p>
+            <p className= {`fitter-action ${pathname =="/fashion/kids" && "text-white"}`} onClick={()=>(router.push('/fashion/kids'))}>kids-design</p>
+            <p className= {`fitter-action ${pathname =="/fashion/men-shoes" && "text-white"}`} onClick={()=>(router.push('/fashion/men-shoes'))}>men-shoe</p>
+            <p className= {`fitter-action ${pathname =="/fashion/men-caps" && "text-white"}`} onClick={()=>(router.push('/fashion/men-caps'))}>men-cap</p>
+            <p className= {`fitter-action ${pathname =="/fashion/jewelrys" && "text-white"}`} onClick={()=>(router.push('/fashion/jewelrys'))}>Jewelleries</p>
+            <p className= {`fitter-action ${pathname =="/fashion/watches" && "text-white"}`} onClick={()=>(router.push('/fashion/watches'))}>watches</p>
+            <p className= {`fitter-action ${pathname =="/fashion/women-bags" && "text-white"}`} onClick={()=>(router.push('/fashion/women-bags'))}>women-bag</p>
+
         </div>
       </div>
       <Offers show={Show} active={Active}/>

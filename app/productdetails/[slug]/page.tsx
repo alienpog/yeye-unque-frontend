@@ -1,5 +1,5 @@
 import ProductDetails from "@/components/ProductDetails";
-import { Item, Item2, } from "@/product";
+import { Item, } from "@/product";
 import { Metadata, } from "next";
 import { notFound } from "next/navigation";
 
@@ -30,7 +30,7 @@ export async function generateMetadata(
 }
 
 const fetchProduct = async(slug : string) => {
-   const res= await fetch(`http://127.0.0.1:8000/product/${slug}`,{cache:"no-cache"})
+   const res= await fetch(`${process.env.BACKEND_URL}/product/${slug}`,{cache:"no-cache"})
    const data : Item = await res.json()
    return data
 }
@@ -52,7 +52,7 @@ export default Page
 
 
 export async function generateStaticParams() {
-  const res = await fetch(`http://127.0.0.1:8000/none`,{cache:"no-cache"})
+  const res = await fetch(`${process.env.BACKEND_URL}/none`,{cache:"no-cache"})
   const data: Item[]= await res.json();
   if(!data) return[];
   return data.map((item) =>({

@@ -39,7 +39,7 @@ function Comments({ id, details }: Props) {
   // geting comments
   useEffect(() => {
     const fetchComments = async () => {
-      const res = await fetch(`http://127.0.0.1:8000/comments/${id}/`);
+      const res = await fetch(`${process.env.BACKEND_URL}/comments/${id}/`);
       const data = await res.json();
       setCommentData(data);
       setIsLoading(false);
@@ -57,7 +57,7 @@ function Comments({ id, details }: Props) {
         if (!post)return;
         const input = post.trim();
         Setpost("")
-        const res = await fetch(`http://127.0.0.1:8000/postcomment/${id}/`,
+        fetch(`${process.env.BACKEND_URL}/postcomment/${id}/`,
         {
           method: 'POST',
           headers: {

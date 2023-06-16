@@ -12,7 +12,7 @@ function LoginPage() {
  useEffect(()=>{
   async function login(){
      if(!session)return;
-      const res =await fetch("http://127.0.0.1:8000/loginuser/", {
+      const res =await fetch(`https://yeye-unique-backend-production.up.railway.app/loginuser/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

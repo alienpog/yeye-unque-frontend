@@ -33,7 +33,7 @@ function Footer() {
         const domain = input.substring(input.lastIndexOf("@"))
         if(domain == "@gmail.com"){
             Setemail("")
-            const res= await fetch("http://127.0.0.1:8000/newsletter/",{
+            const res= await fetch(`${process.env.BACKEND_URL}/newsletter/`,{
 
                 method: 'POST',
                 headers: {
@@ -112,14 +112,14 @@ function Footer() {
                         <Image src={WhiteLogo} className=" h-[65px] w-[60px] object-contain" alt="blacklogo"/>
                     <p className="text-xs font-bold text-white/80 text-center">We make our client Unique</p>
                     <div className="flex items-center justify-center space-x-4 ">
-                        <Link href=''><IconBxlInstagramAlt className="socialicon"/></Link>
-                        <Link href=''><IconBxlTiktok className="socialicon"/></Link>
-                        <Link href=''><IconBxlFacebookCircle className="socialicon"/></Link>
+                        {/* <Link href=''><IconBxlInstagramAlt className="socialicon"/></Link> */}
+                        <Link href='https://www.tiktok.com/@yeye_unique?lang=en'><IconBxlTiktok className="socialicon"/></Link>
+                        {/* <Link href=''><IconBxlFacebookCircle className="socialicon"/></Link> */}
                     </div>
                     <p className="flex items-center justify-center gap-2 text-xs font-bold text-white text-center tracking-widest"><InboxArrowDownIcon className="w-4 h-4 text-white"/>abbey@yeyeunique.com</p>
                 </div>
             </div>
-            <Link href="" className="flex justify-center text-[#f97e7e] text-xs font-bold pt-24 animate-pulse">Design&Build By Alienartech</Link>
+            <Link href="" className="flex justify-center text-[#febfbf] text-xs font-bold pt-24 animate-pulse">Design&Build By Alienartech</Link>
             </div>
         </MiniCon>
     </div>
