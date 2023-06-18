@@ -16,9 +16,6 @@ interface User{
     gmail: string | null;
 }
 
-export const metadata: Metadata = {
-   
-}
 
 function ContactUs() {
     const [name,Setname] = useState<any>("")
