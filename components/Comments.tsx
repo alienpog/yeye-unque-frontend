@@ -39,25 +39,25 @@ function Comments({ id, details }: Props) {
   // geting comments
   useEffect(() => {
     const fetchComments = async () => {
-      const res = await fetch(`${process.env.BACKEND_URL}/comments/${id}/`);
+      const res = await fetch(`https://yeye-unique-backend-production.up.railway.app/comments/${id}/`);
       const data = await res.json();
       setCommentData(data);
       setIsLoading(false);
     };
     const interval = setInterval(() => {
     fetchComments();
-    }, 500000000);
+    }, 300);
     return () => clearInterval(interval);
   }, []);
   
   // posting comment
-  const postcall = async (e : FormEvent<HTMLFormElement>) => {
+  const postComment = async (e : FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if(!session)return dispatch(loginopen());
         if (!post)return;
         const input = post.trim();
         Setpost("")
-        fetch(`${process.env.BACKEND_URL}/postcomment/${id}/`,
+        fetch(`https://yeye-unique-backend-production.up.railway.app/postcomment/${id}/`,
         {
           method: 'POST',
           headers: {
@@ -91,7 +91,7 @@ function Comments({ id, details }: Props) {
         ))}
       </div> 
     </div>
-    {details && (<form className="shadow-lg flex items-center justify-center space-x-1 h-9 md:h-10 mt-2 rounded-lg mb-4" onSubmit={postcall} >
+    {details && (<form className="shadow-lg flex items-center justify-center space-x-1 h-9 md:h-10 mt-2 rounded-lg mb-4" onSubmit={postComment} >
     <div className="py-2 sm:py-3 pl-2 h-full bg-[#F2F2F2] flex-1 flex items-center justify-start rounded-lg sm:rounded-none sm:rounded-l-lg border-2 border-[#E8D7D0]">
     <input type="text" value={post} onChange={(e)=>{Setpost(e.target.value)}} className=" flex-1 text-black text-xs placeholder-red-300 focus:ring-0 outline-none
     border-none  bg-transparent" placeholder="Post a Comment about the Design..." />

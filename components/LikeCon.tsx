@@ -20,7 +20,7 @@ function LikeCon({id, details}: props) {
    // posting the user email to check if he/she liked  the product
     useEffect(()=>{
       const fecthlikes = async()=>{
-        const res= await fetch(`${process.env.BACKEND_URL}/productlikes/${id}/`,
+        const res= await fetch(`https://yeye-unique-backend-production.up.railway.app/productlikes/${id}/`,
         {
           method: 'POST',
           headers: {
@@ -52,13 +52,13 @@ function LikeCon({id, details}: props) {
     // product likes count
       useEffect(()=>{
         async function countlikes(){
-          const res= await fetch(`${process.env.BACKEND_URL}/likescount/${id}`)
+          const res= await fetch(`https://yeye-unique-backend-production.up.railway.app/likescount/${id}`)
           const data = await res.json()
           Setcount(data)
         }
         const interval = setInterval(() => {
          countlikes()
-        },500000000);
+        },300);
         return () => clearInterval(interval);
       },[])
       
@@ -66,7 +66,7 @@ function LikeCon({id, details}: props) {
      // posting the user email to like the product
         const postlike = async(action: string)=>{
           if(!session)return dispatch(loginopen());
-          const res= await fetch(`${process.env.BACKEND_URL}/postlike/${id}/`,
+          const res= await fetch(`https://yeye-unique-backend-production.up.railway.app/postlike/${id}/`,
           {
            method: 'POST',
            headers: {

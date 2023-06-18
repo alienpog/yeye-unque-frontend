@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import MiniCon from "./MiniCon"
-import { PaperAirplaneIcon, PhoneArrowDownLeftIcon } from "@heroicons/react/24/solid"
-import { FormEvent, useEffect, useState } from "react"
+import { PaperAirplaneIcon } from "@heroicons/react/24/solid"
+import { FormEvent,useState } from "react"
 import Image from "next/image"
 import WhiteLogo from "@/public/images/yeye-unique-logo-white.png"
 import IconBxlInstagramAlt from "./Icons/Instagram"
