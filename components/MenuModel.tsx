@@ -20,9 +20,9 @@ function MenuModel({onclick,menuactive}: props) {
             <div className='flex flex-col space-y-6 text-end'>
                 <Link className={`menunav ${pathname == "/" && "-translate-x-2 opacity-50"}`} href='/'onClick={onclick}>Home</Link>
                 <Link className={`menunav ${pathname == "/fashion/allproducts" && "-translate-x-2 opacity-50"}`} href='/fashion/allproducts'onClick={onclick}>All Design</Link>
-                <Link className={`menunav ${pathname == "/about-us" && "-translate-x-2 opacity-50"}`} href='/about-us'onClick={onclick}>About Us</Link>
+                <Link className={`menunav ${pathname == "/about-us" && "-translate-x-2 opacity-50"}`} href='/about-us' onClick={onclick}>About Us</Link>
                 <Link className={`menunav ${pathname == "/faqs" && "-translate-x-2 opacity-50"}`} href='/faqs'onClick={onclick}>FAQ’s</Link>
-                <Link className={`menunav ${pathname == "/contact-us" && "-translate-x-2 opacity-50"}`} href='/contact-us'onClick={onclick}>Contact Us</Link>
+                <Link className={`menunav ${pathname == "/contact-us" && "-translate-x-2 opacity-50"}`} href='/contact-us' onClick={onclick}>Contact Us</Link>
                 <Link className={`menunav phonemenu ${pathname == "/fashion/females" && "-translate-x-2 opacity-50"}`} href='/fashion/females'onClick={onclick}>Women-design</Link>
                 <Link className={`menunav phonemenu ${pathname == "/fashion/males" && "-translate-x-2 opacity-50"}`} href='/fashion/males'onClick={onclick}>Men-design</Link>
                 <Link className={`menunav phonemenu ${pathname == "/fashion/kids" && "-translate-x-2 opacity-50"}`} href='/fashion/kids'onClick={onclick}>Kids-design</Link>

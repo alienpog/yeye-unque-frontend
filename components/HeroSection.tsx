@@ -4,7 +4,7 @@ interface player{
   video: object;
 }
 async function fetchvideo() {
-  const response = await fetch(`${process.env.BACKEND_URL}/videoplay/`,{next: {revalidate:5}})
+  const response = await fetch(`${process.env.BACKEND_URL}/videoplay/`,{next: {revalidate:60*60*24}})
   const data:player[] = await response.json()
   return data
 }
