@@ -30,7 +30,7 @@ export async function generateMetadata(
 }
 
 const fetchProduct = async(slug : string) => {
-   const res= await fetch(`${process.env.BACKEND_URL}/product/${slug}`,{cache:"no-cache"})
+   const res= await fetch(`${process.env.BACKEND_URL}/product/${slug}`,{ next:{revalidate:60*60*24}})
    const data : Item = await res.json()
    return data
 }

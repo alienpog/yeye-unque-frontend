@@ -9,7 +9,7 @@ const VideoPlayer= ({ videoSrc }: props) => {
     <div className=" relative top-0 left-0 heightview">
       <div className='absolute h-full w-full bg-black opacity-20'></div>
     
-    <video className=" w-full h-full object-cover" autoPlay loop muted >
+    <video className=" w-full h-full object-cover" autoPlay={true} muted controls={false} playsInline loop={true} >
         {/* @ts-ignore */}
       <source src={videoSrc[1].video} type="video/webm" />
         {/* @ts-ignore */}

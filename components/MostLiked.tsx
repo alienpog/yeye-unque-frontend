@@ -4,7 +4,7 @@ import ProductItem from "./ProductItem"
 
 
 const quarydesign = async()=>{
- const res= await fetch(`${process.env.BACKEND_URL}/mostliked/`,{cache: "no-cache"})
+ const res= await fetch(`${process.env.BACKEND_URL}/mostliked/`,{ next:{revalidate:60*60*24}})
  const data: Item[]= await res.json()
  return data
 }

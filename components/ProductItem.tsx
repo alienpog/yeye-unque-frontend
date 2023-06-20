@@ -39,7 +39,7 @@ function ProductItem({id, name, image, price, modelimages, old_price, slug, true
         </div>
         {/* @ts-ignore */}
         <Comments id={id} details={false}/>
-        <p onClick= {() =>{router.push(`/productdetails/${slug}`), console.log("slug by click>>>>>>"+slug)}} className='text-xs text-[#333333] font-bold text-center py-1 sm:py-2 bg-[#E7D6CE] rounded-full shadow-lg hover:shadow-none transition ease-in duration-300 cursor-pointer'>
+        <p onClick= {() =>{router.push(`/productdetails/${slug}`)}} className='text-xs text-[#333333] font-bold text-center py-1 sm:py-2 bg-[#E7D6CE] rounded-full shadow-lg hover:shadow-none transition ease-in duration-300 cursor-pointer'>
         Check Design
         </p>
       </div>

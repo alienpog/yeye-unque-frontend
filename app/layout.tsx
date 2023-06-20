@@ -11,7 +11,7 @@ import { Metadata } from 'next'
 
 
 export const metadata: Metadata = {
-  metadataBase:new URL("http://localhost:3000"),
+  metadataBase:new URL("https://www.yeyeunique.com"),
   title:{
     default:"Home page",
     template:`%s | yeye unique`

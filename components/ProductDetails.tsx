@@ -42,8 +42,10 @@ const sacramento = Sacramento({
       <div className='grid grid-cols-1 sm:grid-cols-2 items-start gap-x-8'>
         
         <div>
-            <img
+            <Image
                 src={activeImage}
+                width={100}
+                height={100}
                 alt={`${id}.${name}`}
                 className=" w-full max-h-[400px]"
             />

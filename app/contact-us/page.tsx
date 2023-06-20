@@ -5,7 +5,6 @@ import IconBxlTiktok from "@/components/Icons/TikTok";
 import MiniCon from "@/components/MiniCon";
 import SectionHeader from "@/components/SectionHeader";
 import { InboxArrowDownIcon, MapPinIcon, PhoneArrowDownLeftIcon } from "@heroicons/react/24/solid";
-import { Metadata } from "next";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
@@ -26,9 +25,8 @@ function ContactUs() {
     const [loading, Setloading]= useState(false)
 
     // get data at first load
-    const {data: session}= useSession()
+    const {data: session} = useSession();
     useEffect(()=>{
-        console.log("session>>>>>>",session)
         async function getUserData(){
             const res =await fetch(`https://yeye-unique-backend-production.up.railway.app/gettingform/`,
             {
@@ -41,7 +39,6 @@ function ContactUs() {
             const data: User = await res.json()
             Setname(data?.name)
             Setemail(data?.gmail)
-            console.log("name>>>>>>",data?.name)
         }
         getUserData()  
     },[session])
@@ -129,7 +126,7 @@ function ContactUs() {
          )}
         
         </div>
-        <div className="flex flex-col items-start space-y-4 md:space-y-7">
+        <div className="flex flex-col items-start space-y-4 md:space-y-7 mb-4">
             <div className="flex space-x-2 items-center">
                 <MapPinIcon className="w-4 h-4 text-[#ff0000]"/>
                 <p className="info">Shop location address </p>

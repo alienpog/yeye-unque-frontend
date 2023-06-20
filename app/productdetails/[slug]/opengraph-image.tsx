@@ -19,7 +19,6 @@ interface props {
 async function fetchDeta (slug : string) {
     const res = await fetch(`${process.env.BACKEND_URL}/product/${slug}`, { cache:"no-cache"});
     const data : Item = await res.json();
-    console.log("slug>>>>>>",slug)
     return data
 }
  
