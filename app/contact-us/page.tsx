@@ -93,8 +93,7 @@ function ContactUs() {
         <h1 className="text-2xl font-extrabold text-[#ff0000]">{done}</h1>
         ):(
             <>
-                {error && <p className="w-full text-sm text-white font-semibold text-center bg-[#FFCE00]/70 py-1 rounded-md shadow-sm mb-4">{error}</p> }
-                
+                {error && <p className="w-full text-sm text-white font-semibold text-center bg-[#FFCE00]/70 py-1 rounded-md shadow-sm mb-4">{error}</p>}
                 <h2 className="text-xs text-[#464646] font-medium mb-4">We Contact You In few Minutes</h2>
                 <form className="flex flex-col items-center justify-center gap-2 mt-2 mb-4" onSubmit={submitform}  >
                 <div className="inputfield">

@@ -62,7 +62,7 @@ function Products({params:{product}}:props){
             <ProductItem key={id} id={id} name={name} image={image} price={price} old_price={old_price} modelimages={modelimages} slug={slug} truecon={false}/>
           )) }
          </div>
-         <TwoButtons prev={products?.previous} next={products?.next} product={product}/>
+         <TwoButtons prev={products?.previous} next={products?.next} product={product} loading={setIsLoading} />
           </>      
         ):
         (

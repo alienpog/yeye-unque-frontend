@@ -52,7 +52,7 @@ export default Page
 
 
 export async function generateStaticParams() {
-  const res = await fetch(`${process.env.BACKEND_URL}/none`,{cache:"no-cache"})
+  const res = await fetch(`${process.env.BACKEND_URL}/none`,{next:{revalidate:60*60*24}})
   const data: Item[]= await res.json();
   if(!data) return[];
   return data.map((item) =>({

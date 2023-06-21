@@ -92,11 +92,11 @@ function Comments({ id, details }: Props) {
       </div> 
     </div>
     {details && (<form className="shadow-lg flex items-center justify-center space-x-1 h-9 md:h-10 mt-2 rounded-lg mb-4" onSubmit={postComment} >
-    <div className="py-2 sm:py-3 pl-2 h-full bg-[#F2F2F2] flex-1 flex items-center justify-start rounded-lg sm:rounded-none sm:rounded-l-lg border-2 border-[#E8D7D0]">
+    <div className="py-2 sm:py-3 pl-2 h-full bg-[#F2F2F2] flex-1 flex items-center justify-start rounded-l-lg border-2 border-[#E8D7D0]">
     <input type="text" value={post} onChange={(e)=>{Setpost(e.target.value)}} className=" flex-1 text-black text-xs placeholder-red-300 focus:ring-0 outline-none
     border-none  bg-transparent" placeholder="Post a Comment about the Design..." />
     </div>
-    <button type='submit' disabled={!post} className="hidden sm:flex bg-[#E8D7D0] rounded-r-lg h-full w-9 md:w-10 justify-center items-center border-none outline-none text-black disabled:text-black/10 disabled:cursor-not-allowed transition-all delay-300 ease-in-out">
+    <button type='submit' disabled={!post} className="flex bg-[#E8D7D0] rounded-r-lg h-full w-9 md:w-10 justify-center items-center border-none outline-none text-black disabled:text-black/10 disabled:cursor-not-allowed transition-all delay-300 ease-in-out">
     <PaperAirplaneIcon className="w-4 h-4 -rotate-45"/></button>
     </form>)}
     

@@ -93,11 +93,11 @@ function Footer() {
                             <p className="text-xs sm:text-sm font-bold text-white/80">Subcribe To Our Newsletter To Have The Latest 
                                 Design Update </p>
                             <form className="shadow-lg flex items-center justify-center space-x-1 h-10 max-w-sm " onSubmit= {emailsubmit}>
-                                <div className="py-2 sm:py-3 pl-2 h-full bg-[#F2F2F2] flex-1 flex items-center justify-start rounded-lg sm:rounded-none sm:rounded-l-lg">
+                                <div className="py-2 sm:py-3 pl-2 h-full bg-[#F2F2F2] flex-1 flex items-center justify-start rounded-l-lg">
                                 <input type="text" value={email} onChange={(e)=>{Setemail(e.target.value),Seterror("")}} className=" flex-1 text-black text-xs placeholder-black/50 focus:ring-0 outline-none
                                 border-none  bg-transparent" placeholder="Put your Gmail..." />
                                 </div>
-                                <button type='submit' disabled={!email} className="hidden sm:flex bg-[#E8D7D0] rounded-r-lg h-full w-10 justify-center items-center border-none outline-none text-black disabled:text-black/10 disabled:cursor-not-allowed transition-all delay-300 ease-in-out">
+                                <button type='submit' disabled={!email} className="flex bg-[#E8D7D0] rounded-r-lg h-full w-10 justify-center items-center border-none outline-none text-black disabled:text-black/10 disabled:cursor-not-allowed transition-all delay-300 ease-in-out">
                                 {loading?<ClassicSpinner size={15} color="black"/>:<PaperAirplaneIcon className="w-4 h-4 -rotate-45"/>}</button>
                             </form></>
                            )

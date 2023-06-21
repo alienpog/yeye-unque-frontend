@@ -4,6 +4,8 @@ import SeeMoreproduct from './SeeMoreproduct'
 import { useRouter } from 'next/navigation';
 import LikeCon from './LikeCon'
 import Image from 'next/image';
+import { ClassicSpinner } from "react-spinners-kit";
+import { useState } from 'react';
 
 interface props {
   name: string,
@@ -18,7 +20,7 @@ interface props {
 
 function ProductItem({id, name, image, price, modelimages, old_price, slug, truecon }: props){
   const router = useRouter();
-  
+  const [loading, Setloading]= useState(false)
   return (
     <div className={`mb-2 ${truecon && "w-[320px]"}`}>
         <div className='relative h-[300px] overflow-hidden mb-2 rounded-3xl'>
@@ -39,8 +41,8 @@ function ProductItem({id, name, image, price, modelimages, old_price, slug, true
         </div>
         {/* @ts-ignore */}
         <Comments id={id} details={false}/>
-        <p onClick= {() =>{router.push(`/productdetails/${slug}`)}} className='text-xs text-[#333333] font-bold text-center py-1 sm:py-2 bg-[#E7D6CE] rounded-full shadow-lg hover:shadow-none transition ease-in duration-300 cursor-pointer'>
-        Check Design
+        <p onClick= {() =>{router.push(`/productdetails/${slug}`),Setloading(true)}} className=' flex justify-center items-center text-xs text-[#333333] font-bold text-center py-1 sm:py-2 bg-[#E7D6CE] rounded-full shadow-lg hover:shadow-none transition ease-in duration-300 cursor-pointer'>
+        {loading?<ClassicSpinner size={15} color="black"/>:"Check Design"}
         </p>
       </div>
 
