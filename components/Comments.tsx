@@ -39,7 +39,7 @@ function Comments({ id, details }: Props) {
   // geting comments
   useEffect(() => {
     const fetchComments = async () => {
-      const res = await fetch(`http://yeye-unique-backend-production.up.railway.app/comments/${id}/`);
+      const res = await fetch(`https://yeye-unique-backend-production.up.railway.app/comments/${id}/`);
       const data = await res.json();
       setCommentData(data);
       setIsLoading(false);
@@ -48,7 +48,7 @@ function Comments({ id, details }: Props) {
     fetchComments();
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [id]);
   
   // posting comment
   const postComment = async (e : FormEvent<HTMLFormElement>) => {

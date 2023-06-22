@@ -60,7 +60,7 @@ function LikeCon({id, details}: props) {
          countlikes()
         },1000);
         return () => clearInterval(interval);
-      },[])
+      },[id])
       
 
      // posting the user email to like the product
@@ -84,7 +84,7 @@ function LikeCon({id, details}: props) {
   return (
     <div className='flex space-x-1 text-white items-center'>
         {like?
-        <RedHeartIcon className={`w-5 h-5 hover:scale-150 transition ease-in-out duration-300 cursor-pointer text-[#ff0000] ${details && "w-6 h-6 sm:w-7 sm:h-7"}`} onClick={() =>{postlike('unlike'),session ? (Setlike(false),Setcount((prev)=>(prev-1))):null}}/>
+        <RedHeartIcon className={`w-5 h-5 hover:scale-150 transition ease-in-out duration-300 cursor-pointer text-[#ff0000] ${details && "w-6 h-6 sm:w-7 sm:h-7"}`} onClick={() =>{postlike('unlike'),session ? (Setlike(false),Setcount((prev)=>(prev > 0 ? prev-1: 0 ))):null}}/>
         :
         <HeartIcon className={`w-5 h-5 hover:scale-150 transition ease-in-out duration-300 cursor-pointer ${details && "w-6 h-6 sm:w-7 sm:h-7 text-black"}`} onClick={() => {postlike('like'),session ? (Setlike(true),Setcount((prev)=>(prev+1))):null}}/>
         }
