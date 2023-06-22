@@ -3,14 +3,13 @@ import moment from 'moment';
 interface props{
     name: string,
     text: string,
-    image: string,
+    image?: string,
     time:string,
     details:boolean,
 }
 function Comment({name, text, image, time, details}: props) {
-  const clean01= image.replace("https://yeyeproductimages.s3.amazonaws.com/https%3A/","https://")
-  const clean02= clean01.replace("%3D","=")
-  console.log(clean02)
+  const clean01= image?.replace("https://yeyeproductimages.s3.amazonaws.com/https%3A/","https://")
+  const clean02= clean01?.replace("%3D","=")
   return (
     <>
         

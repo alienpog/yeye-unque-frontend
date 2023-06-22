@@ -35,7 +35,7 @@ function ProductItem({id, name, image, price, modelimages, old_price, slug, true
             <LikeCon id={id} details={false}/>
         </div>
         <div className={`h-[300px] ${truecon && "w-[320px]"}`}>
-          <Image src={image} alt={name} width={100} height={100}
+          <Image src={image} alt={name} width={500} height={500} placeholder='blur' blurDataURL='URL'
           className=' h-full w-full object-cover'/>
         </div>
         </div>

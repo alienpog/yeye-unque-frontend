@@ -1,12 +1,12 @@
 'use client'
 import { signIn, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
+import { ClassicSpinner } from "react-spinners-kit";
 
 
 function LoginPage() {
- 
+const [loading, Setloading]= useState(false)
  const { data : session }= useSession();
  const router = useRouter()
  useEffect(()=>{
@@ -41,8 +41,8 @@ function LoginPage() {
         <img src = "/images/logo-animi-yeye.gif" alt="logo" className="max-h-[300px] max-w-[300px] mx-2 sm:mx-auto "/>
         <div className="flex justify-center mt-4  max-w-6xl mx-auto">
             <div className="text-xs text-[#FF0000] font-bold py-2 px-6 border-2 border-[#E7D6CE] animate-pulse
-            rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer" onClick={()=>signIn("google")}>
-            Sign In With Google
+            rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer" onClick={()=>{signIn("google"),Setloading(true)}}>
+            {loading?<ClassicSpinner size={15} color="#FF0000"/>:"Sign In With Google"}
             </div>
         </div>
       </div>  

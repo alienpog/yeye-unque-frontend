@@ -1,6 +1,5 @@
 import ConAboutUs from '@/components/ConAboutUs'
-import MiniCon from '@/components/MiniCon'
-import Testimonials from '@/components/Testimonials'
+
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {

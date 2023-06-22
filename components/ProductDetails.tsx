@@ -44,13 +44,14 @@ const sacramento = Sacramento({
         <div>
             <Image
                 src={activeImage}
-                width={100}
-                height={100}
+                width={500}
+                height={500}
                 alt={`${id}.${name}`}
                 className=" w-full max-h-[400px]"
+                placeholder='blur' blurDataURL='URL'
             />
             <div className='flex space-x-2 items-center justify-start h-130 mt-2 overflow-y-hidden overflow-x-scroll scrollbar-thumb-rounded-md scrollbar-thumb-[#E7D6CE] scrollbar-thin'>
-            <Image src={image} alt={`${id}.${name}`} width={100} height={100}
+            <Image src={image} alt={`${id}.${name}`} width={500} height={500} placeholder='blur' blurDataURL='URL'
             className='small-image'
             onClick={()=>{setActiveImage(image)}} />
             
@@ -60,8 +61,9 @@ const sacramento = Sacramento({
                     key={index}
                     src={cropImage}
                     alt={`${id}.${name}`}
-                    height={100}
-                    width={100}
+                    height={500}
+                    width={500}
+                    placeholder='blur' blurDataURL='URL'
                     className='small-image'
                     onClick={()=>{setActiveImage(cropImage)}}/>
                 ))}

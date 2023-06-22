@@ -101,7 +101,7 @@ function NavgationTab() {
             ):
               <p className={`topnav ${pathname =="/login" && "bg-[#E7D6CE]"}`} onClick={()=>{router.push('/login')}}> Login</p>
             }
-            <Bars3Icon className=" h-6 object-contain text-black lg:hidden cursor-pointer" onClick={()=>{MenuSetActive2(true)}}/>
+            <Bars3Icon className="pr-2 h-8 object-contain text-black lg:hidden cursor-pointer" onClick={()=>{MenuSetActive2(true)}}/>
         </div>       
       </nav>
       <div className={`hidden w-full md:flex bg-[#E7D6CE]  text-[#010101] text-xs lg:text-sm shadow-lg ${Active? 'opacity-1 h-[42px] ':'opacity-0 h-0'} transition-all duration-300 ease-in-out `}>

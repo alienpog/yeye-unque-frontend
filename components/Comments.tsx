@@ -39,14 +39,14 @@ function Comments({ id, details }: Props) {
   // geting comments
   useEffect(() => {
     const fetchComments = async () => {
-      const res = await fetch(`https://yeye-unique-backend-production.up.railway.app/comments/${id}/`);
+      const res = await fetch(`http://yeye-unique-backend-production.up.railway.app/comments/${id}/`);
       const data = await res.json();
       setCommentData(data);
       setIsLoading(false);
     };
     const interval = setInterval(() => {
     fetchComments();
-    }, 300);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
   
@@ -56,6 +56,7 @@ function Comments({ id, details }: Props) {
         if(!session)return dispatch(loginopen());
         if (!post)return;
         const input = post.trim();
+        setCommentData((prev : any) =>[...prev, {user:session?.user?.name,comment: input,image: session?.user?.image}]);
         Setpost("")
         fetch(`https://yeye-unique-backend-production.up.railway.app/postcomment/${id}/`,
         {
@@ -87,7 +88,7 @@ function Comments({ id, details }: Props) {
       </div>
       <div className={`${details? "h-[150px]":"h-[60px]"} overflow-y-scroll scrollbar-thumb-rounded-md overflow-x-auto scrollbar-thumb-[#E7D6CE] scrollbar-thin mb-2 px-1 pt-3`}>
         {commentData.map((comment) => (
-          <Comment name={comment.user} text={comment.comment} key={comment.comment} image ={comment.image} time={comment.checkedlast} details ={details} />
+          <Comment name={comment.user} text={comment.comment} key={comment.user} image ={comment.image} time={comment.checkedlast} details ={details} />
         ))}
       </div> 
     </div>
