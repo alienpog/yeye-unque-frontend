@@ -86,7 +86,7 @@ function Comments({ id, details }: Props) {
         <h2 className="text-xs text-black font-semibold">comments</h2>
         <span className="ml-auto text-[#747474] text-xs font-semibold">{formattedNumber}</span>
       </div>
-      <div className={`${details? "h-[150px]":"h-[60px]"} overflow-y-scroll scrollbar-thumb-rounded-md overflow-x-auto scrollbar-thumb-[#E7D6CE] scrollbar-thin mb-2 px-1 pt-3`}>
+      <div className={`${details? "h-[100px] sm:h-[150px]":"h-[60px]"} overflow-y-scroll scrollbar-thumb-rounded-md overflow-x-auto scrollbar-thumb-[#E7D6CE] scrollbar-thin mb-2 px-1 pt-3`}>
         {commentData.map((comment) => (
           <Comment name={comment.user} text={comment.comment} key={comment.user} image ={comment.image} time={comment.checkedlast} details ={details} />
         ))}
