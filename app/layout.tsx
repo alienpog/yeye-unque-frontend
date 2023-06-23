@@ -32,12 +32,14 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions)
   return (
     <html lang="en">
+       {document.cookie = 'cookie2=value2; SameSite=None; Secure'}
         <body className='bg-[#F2F2F2]'> 
           <SessionProvider session={session}>
           <Providers>
           {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
             <GoogleAnalytics ga_id= 
             {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+            
           ) : null}
           <NotLogin/> 
           <ModelImage/>
