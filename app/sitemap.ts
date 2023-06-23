@@ -1,7 +1,7 @@
 import { Item} from "@/product";
 
 export default async function sitemap(){
-    const baseurl = "https://www.yeyeunique.com";
+    const baseurl = "https://yeyeunique.com";
 
     const res = await fetch(`https://yeye-unique-backend-production.up.railway.app/none`,{cache:"no-cache"})
     const data: Item[] = await res.json();
