@@ -82,7 +82,7 @@ function Comments({ id, details }: Props) {
   return (
     <>
     <div className={`${!commentData.length && 'h-0 overflow-hidden'} ${details && "mt-4"}`}>
-      <div className="flex border-b-2   rounded-sm border-b-[#ECD7CE] pb-[4px] shadow ">
+      <div className="flex border-b-2   rounded-sm border-b-[#ECD7CE] px-2 pb-[4px] shadow ">
         <h2 className="text-xs text-black font-semibold">comments</h2>
         <span className="ml-auto text-[#747474] text-xs font-semibold">{formattedNumber}</span>
       </div>

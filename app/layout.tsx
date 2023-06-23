@@ -8,6 +8,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import NotLogin from '@/components/NotLogin'
 import { Metadata } from 'next'
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 
 export const metadata: Metadata = {
@@ -34,6 +35,10 @@ export default async function RootLayout({
         <body className='bg-[#F2F2F2]'> 
           <SessionProvider session={session}>
           <Providers>
+          {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+            <GoogleAnalytics ga_id= 
+            {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+          ) : null}
           <NotLogin/> 
           <ModelImage/>
           <NavgationTab/>  
