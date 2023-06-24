@@ -66,8 +66,8 @@ function Products({params:{product}}:props){
           </>      
         ):
         (
-          <div className='min-h-[100svh] grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto my-40 items-center justify-center gap-12 md:gap-24'>
-            <img src='/images/no_data@4x.png' width={100} height={100} alt='no product' className='w-full h-full object-contain'/>
+          <div className='h-[100svh] sm:h-80 grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto mt-6 items-start justify-center gap-12 md:gap-24'>
+            <img src='/images/no_data@4x.png' width={100} height={100} alt='no product' className='w-full object-contain'/>
             <div className='flex flex-col space-y-4 md:space-y-8 text-left'>
             <h2 className='text-2xl md:text-5xl text-black font-bold'> Product coming soon...</h2>
              <div className="text-xs text-white bg-[#ff0000] font-bold py-2 px-6 rounded-full text-center shadow-md hover:shadow-none

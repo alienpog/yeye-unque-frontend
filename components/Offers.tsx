@@ -18,7 +18,7 @@ const actions = [
     "offer":"Get Your Design In 48hrs"
   },
   {
-    "offer":"10% OFF Your First Oder"
+    "offer":"10% OFF Your First Order"
   },
   {
     "offer":"Men & Kids Service available"
