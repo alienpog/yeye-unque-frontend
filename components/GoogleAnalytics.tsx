@@ -1,24 +1,43 @@
-import Script from "next/script";
+// components/GoogleAnalytics.tsx
+'use client';
 
-const GoogleAnalytics = ({ ga_id }: { ga_id: string }) => (
-  <>
-    <Script
-      async
-      src={`https://www.googletagmanager.com/gtag/js? 
-      id=${ga_id}`}
-    ></Script>
-    <Script
-      id="google-analytics"
-      dangerouslySetInnerHTML={{
-        __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+import {usePathname, useSearchParams} from 'next/navigation'
+import { useEffect } from "react";
+import {pageview} from "@/lib/gtagHelper"
+import Script from 'next/script'
 
-          gtag('config', '${ga_id}');
-        `,
-      }}
-    ></Script>
-  </>
-);
-export default GoogleAnalytics;
+export default function GoogleAnalytics({GA_MEASUREMENT_ID} : {GA_MEASUREMENT_ID : string}){
+    const pathname = usePathname()
+    const searchParams =useSearchParams()
+
+    useEffect(() => {
+        {/* @ts-ignore */}
+        const url = pathname + searchParams.toString()
+        {/* @ts-ignore */}
+        pageview(GA_MEASUREMENT_ID, url);
+        
+    }, [pathname, searchParams, GA_MEASUREMENT_ID]);
+
+    return (
+        <>
+            <Script strategy="afterInteractive" 
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}/>
+            <Script id='google-analytics' strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('consent', 'default', {
+                    'analytics_storage': 'denied'
+                });
+                
+                gtag('config', '${GA_MEASUREMENT_ID}', {
+                    page_path: window.location.pathname,
+                });
+                `,
+                }}
+            />
+        </>
+)}

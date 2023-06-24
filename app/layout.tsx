@@ -8,6 +8,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import NotLogin from '@/components/NotLogin'
 import { Metadata } from 'next'
+import CookieBanner from '@/components/cookiebanner';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 
@@ -32,20 +33,17 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions)
   return (
     <html lang="en">
-       {document.cookie = 'cookie2=value2; SameSite=None; Secure'}
+       {/* {document.cookie = 'cookie2=value2; SameSite=None; Secure'} */}
         <body className='bg-[#F2F2F2]'> 
           <SessionProvider session={session}>
           <Providers>
-          {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
-            <GoogleAnalytics ga_id= 
-            {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
-            
-          ) : null}
+          <GoogleAnalytics GA_MEASUREMENT_ID='G-8QH9B4MVXC'/>
           <NotLogin/> 
           <ModelImage/>
           <NavgationTab/>  
           {children} 
            <Footer/> 
+           <CookieBanner/>
            </Providers>
           </SessionProvider>
         </body> 
