@@ -66,7 +66,7 @@ function Products({params:{product}}:props){
           </>     
         ):
         (
-          <div className='h-80 grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto mt-6 sm:items-start sm:justify-center gap-12 md:gap-24'>
+          <div className=' grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto my-6 sm:my-24 items-start justify-center gap-12 md:gap-24 mb-6'>
             <img src='/images/no_data@4x.png' width={500} height={500} alt='no product' className='w-full object-contain mb-20 sm:mb-0'/>
             <div className='flex flex-col space-y-4 md:space-y-8 text-left'>
             <h2 className='text-2xl md:text-5xl text-black font-bold'>Product coming soon...</h2>
