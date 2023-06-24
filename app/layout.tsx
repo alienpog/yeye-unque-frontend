@@ -8,12 +8,12 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import NotLogin from '@/components/NotLogin'
 import { Metadata } from 'next'
-import CookieBanner from '@/components/cookiebanner';
+import CookieBanner from '@/components/CookieBanner';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 
 export const metadata: Metadata = {
-  metadataBase:new URL("https://www.yeyeunique.com"),
+  metadataBase:new URL("https://yeyeunique.com"),
   title:{
     default:"Home page",
     template:`%s | yeye unique`

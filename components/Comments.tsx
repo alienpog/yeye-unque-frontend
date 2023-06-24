@@ -46,7 +46,7 @@ function Comments({ id, details }: Props) {
     };
     const interval = setInterval(() => {
     fetchComments();
-    }, 1000*1000);
+    }, 500);
     return () => clearInterval(interval);
   }, [id]);
   
