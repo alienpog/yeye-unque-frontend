@@ -41,7 +41,7 @@ function ProductItem({id, name, image, price, modelimages, old_price, slug, true
         </div>
         {/* @ts-ignore */}
         <Comments id={id} details={false}/>
-        <p onClick= {() =>{router.push(`/productdetails/${slug}`),Setloading(true)}} className=' flex justify-center items-center text-xs text-[#333333] font-bold text-center py-1 sm:py-2 bg-[#E7D6CE] rounded-full shadow-lg hover:shadow-none transition ease-in duration-300 cursor-pointer'>
+        <p onClick= {() =>{router.push(`/productdetails/${slug}`),Setloading(true)}} className=' flex justify-center items-center text-xs text-[#333333] font-bold text-center py-1 sm:py-2 bg-[#E7D6CE] rounded-full drop-shadow-lg hover:shadow-none transition ease-in duration-300 cursor-pointer'>
         {loading?<ClassicSpinner size={15} color="black"/>:"Check Design"}
         </p>
       </div>
