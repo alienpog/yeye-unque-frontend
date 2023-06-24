@@ -8,7 +8,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import NotLogin from '@/components/NotLogin'
 import { Metadata } from 'next'
-import CookieBanner from '@/components/CookieBanner';
+import CookieBanner from '@/components/cookiebanner';
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 
