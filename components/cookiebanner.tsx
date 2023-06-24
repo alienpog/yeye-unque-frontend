@@ -29,7 +29,7 @@ export default function CookieBanner(){
     }, [cookieConsent]);
     
     return (
-        <div className={`fixed inset-0 w-full flex items-center justify-center ${cookieConsent != null ? "bottom-[-100%]" : "bottom-[0]"}  transition-all duration-500 ease-out`}>
+        <div className={`w-full flex items-center justify-center  ${cookieConsent != null ? "bottom-[-100%]" : " fixed inset-0 bottom-[0]"}  transition-all duration-500 ease-out`}>
         <div className="  w-full absolute bottom-0 sm:bottom-5 max-w-md mx-auto flex flex-col -translate-x-1/2 left-[50%] h-auto transform overflow-hidden rounded-t-2xl sm:rounded-2xl bg-[#9C0F0F] p-6 text-left align-middle shadow-2xl transition-all z-40">
             <SectionHeader conheader='we use cookies on our site' red />
             <div className="mt-2">
