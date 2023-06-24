@@ -24,7 +24,7 @@ async function fetchDeta (slug : string) {
  
 
 
-export default async function og({params:{slug}}:props){
+ async function og({params :{slug}}:props){
     const product = await fetchDeta(slug);
     return new ImageResponse((
       <div tw="retative flex items-center justify-center">
@@ -36,3 +36,4 @@ export default async function og({params:{slug}}:props){
     ),size)
     
 }
+export default og
