@@ -24,7 +24,7 @@ const actions = [
     "offer":"Men & Kids Service available"
   },
   {
-    "offer":"Delivery World Wild"
+    "offer":"Delivery Worldwide"
   },
   {
     "offer":"Since 1989"

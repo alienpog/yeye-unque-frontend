@@ -9,7 +9,7 @@ interface props {
     name:string
 }
 
-function Testimonial({comment, image,id, name} : props) {
+function Testimonial({comment, image,id,name} : props) {
   return (
     <div className="relative h-[460px] shadow-2xl overflow-hidden">
     <div className="absolute p-6 h-[300px]">

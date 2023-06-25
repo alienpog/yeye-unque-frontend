@@ -58,7 +58,7 @@ function LikeCon({id, details}: props) {
         }
         const interval = setInterval(() => {
          countlikes()
-        },500);
+        },1000);
         return () => clearInterval(interval);
       },[id])
       
