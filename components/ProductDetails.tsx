@@ -89,7 +89,7 @@ const sacramento = Sacramento({
                  {old_price && <h2 className='text-sm font-bold text-black/50 lg:text-lg line-through'>N{old_price}K</h2>}
                 </div>     
             </div> 
-            <div className="text-xs bg-[#FF0000] text-white font-medium py-2 px-6 max-w-[150px]
+            <div className="text-xs bg-[#9C0F0F] text-white font-medium py-2 px-6 max-w-[150px]
                 rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer mb-2 " onClick={()=>{router.push('/contact-us')}}>
                 Contact Us
             </div>   

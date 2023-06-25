@@ -12,7 +12,7 @@ interface props{
 function MenuModel({onclick,menuactive}: props) {
   const pathname = usePathname()
   return (
-    <div className={`bg-[#FF0000] w-full min-h-screen text-white text-xs sm:text-sm font-bold pr-6 z-40 fixed top-0 ${menuactive ? "right-0" : "right-[-100%]"} transition-all duration-500 ease-in-out`}>
+    <div className={`bg-[#9C0F0F] w-full min-h-screen text-white text-xs sm:text-sm font-bold pr-6 z-40 fixed top-0 ${menuactive ? "right-0" : "right-[-100%]"} transition-all duration-500 ease-in-out`}>
         <div className='w-full flex justify-end mt-4 mb-8'>
         <XMarkIcon className='w-6 h-6 cursor-pointer' onClick={onclick}/>
         </div>

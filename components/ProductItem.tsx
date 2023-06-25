@@ -26,7 +26,7 @@ function ProductItem({id, name, image, price, modelimages, old_price, slug, true
         <div className='relative h-[300px] overflow-hidden mb-2 rounded-3xl'>
         <SeeMoreproduct slug={slug} images={modelimages}/>
         <div className='flex flex-col space-y-1 absolute bottom-0 left-0 pb-3 pl-3 pt-6 bg-gradient-to-t from-black w-full '>
-            <h1 className='text-xs font-semibold text-[#B9B9B9]'>{name}</h1>
+            <h1 className='text-xs text-white/70'>{name}</h1>
             <div className='flex items-center space-x-2'>
              <p className='text-lg text-white font-semibold'> <span className='line-through'>N</span>{price}K</p> 
              {old_price ? <p className='text-sm text-white/70 font-semibold line-through'>N{old_price}K</p> : <p className='text-sm text-white/70 font-semibold'>N/A</p>} 
@@ -34,7 +34,7 @@ function ProductItem({id, name, image, price, modelimages, old_price, slug, true
             
             <LikeCon id={id} details={false}/>
         </div>
-        <div className={`h-[300px] ${truecon && "w-[320px]"}`}>
+        <div className={`h-[300px] ${truecon && "w-[320px]"}`} onClick= {() =>{router.push(`/productdetails/${slug}`),Setloading(true)}}>
           <Image src={image} alt={name} width={500} height={500} placeholder='blur' blurDataURL='URL'
           className=' h-full w-full object-cover'/>
         </div>

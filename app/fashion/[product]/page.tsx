@@ -70,7 +70,7 @@ function Products({params:{product}}:props){
             <img src='/images/no_data@4x.png' width={500} height={500} alt='no product' className='w-full object-contain mb-20 sm:mb-0'/>
             <div className='flex flex-col space-y-4 md:space-y-8 text-left'>
             <h2 className='text-2xl md:text-5xl text-black font-bold'>Product coming soon...</h2>
-             <div className="text-xs text-white bg-[#ff0000] font-bold py-2 px-6 rounded-full text-center shadow-md hover:shadow-none
+             <div className="text-xs text-white bg-[#9C0F0F] font-bold py-2 px-6 rounded-full text-center shadow-md hover:shadow-none
               transition-all duration-300 ease-in-out cursor-pointer w-64 "onClick={()=>router.push("/fashion/allproducts")}>
               All Designs
             </div>

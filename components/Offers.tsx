@@ -59,7 +59,7 @@ function Offers({show,active}:props ) {
     )}
     
      <Swiper className="flex w-full h-full item-center justify-center py-[1px]" modules={[Autoplay]} loop={true} autoplay= {{delay:4000, }}>
-      {actions.map((actions,index) =>( <SwiperSlide className='flex w-full item-center justify-center'key={index}><div className="w-full flex items-center justify-center"><h1 className="bg-[#FF0000] w-[200px] sm:w-[250px] text-center text-white rounded-md font-semibold
+      {actions.map((actions,index) =>( <SwiperSlide className='flex w-full item-center justify-center'key={index}><div className="w-full flex items-center justify-center"><h1 className="bg-[#9C0F0F] w-[200px] sm:w-[250px] text-center text-white rounded-md font-semibold
        text-xs md:text-sm py-1 sm:py-2" >{actions.offer}</h1></div></SwiperSlide> ))} 
     </Swiper>
     </div> 

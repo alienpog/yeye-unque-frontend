@@ -29,8 +29,8 @@ export default function CookieBanner(){
     }, [cookieConsent]);
     
     return (
-        <div className={`w-full flex fixed items-center justify-center  ${cookieConsent != null ? "bottom-[-100%]" : "inset-0 bottom-[0]"}  transition-all duration-500 ease-out`}>
-        <div className="  w-full absolute bottom-0 sm:bottom-5 max-w-2xl mx-auto flex flex-col -translate-x-1/2 left-[50%] h-[250px] sm:h-auto transform overflow-hidden rounded-t-2xl sm:rounded-2xl bg-[#9C0F0F] p-6 text-left align-middle drop-shadow-2xl transition-all z-10">
+       
+        <div className= {`w-full fixed max-w-2xl mx-auto flex flex-col -translate-x-1/2 left-[50%] h-[250px] ${cookieConsent != null ? "bottom-[-100%]" : "bottom-0 sm:bottom-5"}  sm:h-auto transform overflow-hidden rounded-t-2xl sm:rounded-2xl bg-[#9C0F0F] p-6 text-left align-middle drop-shadow-2xl transition-all duration-500 ease-out z-10`}>
             <SectionHeader conheader='We use Cookies on our Site' red />
             <div className="mt-2">
             <p className="text-xs md:text-sm text-white text-center">
@@ -42,5 +42,5 @@ export default function CookieBanner(){
                 <button className='modelbtn' onClick={() => setCookieConsent(true)}>Allow Cookies</button>
             </div>   
         </div>
-        </div>
+    
     )}

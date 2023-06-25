@@ -46,7 +46,7 @@ function Comments({ id, details }: Props) {
     };
     const interval = setInterval(() => {
     fetchComments();
-    }, 1000);
+    }, 500);
     return () => clearInterval(interval);
   }, [id]);
   
@@ -56,7 +56,7 @@ function Comments({ id, details }: Props) {
         if(!session)return dispatch(loginopen());
         if (!post)return;
         const input = post.trim();
-        setCommentData((prev : any) =>[...prev, {user:session?.user?.name,comment: input,image: session?.user?.image}]);
+        // setCommentData((prev : any) =>[...prev, {user:session?.user?.name,comment: input,image: session?.user?.image}]);
         Setpost("")
         fetch(`https://yeye-unique-backend-production.up.railway.app/postcomment/${id}/`,
         {

@@ -90,7 +90,7 @@ function ContactUs() {
      <div className=" grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-6 md:gap-24 mt-2 md:mt-6 lg:mt-12">
         <div>
         {done?(
-        <h1 className="text-2xl font-extrabold text-[#ff0000]">{done}</h1>
+        <h1 className="text-2xl font-extrabold text-[#9C0F0F]">{done}</h1>
         ):(
             <>
                 {error && <p className="w-full text-sm text-white font-semibold text-center bg-[#FFCE00]/70 py-1 rounded-md shadow-sm mb-4">{error}</p>}
@@ -109,12 +109,12 @@ function ContactUs() {
                 border-none  bg-transparent" placeholder="Your Phone Number...."/>
                 </div>
                 <div className="flex items-center justify-between w-full mt-2 md:mt-4">
-                <button className="text-xs text-white font-bold py-2 px-6 bg-[#FF0000] 
+                <button className="text-xs text-white font-bold py-2 px-6 bg-[#9C0F0F] 
                 rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer "
                 type="submit">
                     {loading?<ClassicSpinner size={15} color="white"/>:"Send"}
               </button>
-              <Link href="https://wa.me/07014074694"className="text-xs text-white font-bold py-2 px-6 bg-green-600 
+              <Link href="https://wa.me/07014074694"className="text-xs text-white font-bold py-2 px-6 bg-green-900 
                 rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer ">
                 <span className="mr-2 font-bold animate-pulse"> OR </span>Chat Us On Whatsapp
                 </Link>   
@@ -127,15 +127,15 @@ function ContactUs() {
         </div>
         <div className="flex flex-col items-start space-y-4 md:space-y-7 mb-4">
             <div className="flex space-x-2 items-center">
-                <MapPinIcon className="w-4 h-4 text-[#ff0000]"/>
+                <MapPinIcon className="w-4 h-4 text-[#9C0F0F]"/>
                 <p className="info">Shop location address </p>
             </div>
             <div className="flex space-x-2 items-center">
-                <InboxArrowDownIcon className="w-4 h-4 text-[#ff0000]"/>
+                <InboxArrowDownIcon className="w-4 h-4 text-[#9C0F0F]"/>
                 <p className="info">abbey@yeyeunique.com</p>
             </div>
             <div className="flex space-x-2 items-center">
-                <PhoneArrowDownLeftIcon className="w-4 h-4 text-[#ff0000]"/>
+                <PhoneArrowDownLeftIcon className="w-4 h-4 text-[#9C0F0F]"/>
                 <p className="info">+234 701 4074 694</p>
             </div>
             <div className="w-full flex items-center justify-start space-x-6 mt-3 mb-4">

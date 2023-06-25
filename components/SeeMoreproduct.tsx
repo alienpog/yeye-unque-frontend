@@ -16,7 +16,9 @@ function SeeMoreproduct({slug,images} : props) {
         dispatch(openitem())
     }
   return (
-     <ViewfinderCircleIcon className='w-6 h-6 absolute top-4 right-4 text-white hover:text-[#ff0000] transition ease-in-out duration-300 cursor-pointer shadow-md rounded-md animate-bounce' onClick={open}/>
+    <div className='absolute top-0 right-0 pt-3 pr-3 pl-1 pb-1 bg-[#E7D6CE]'>
+        <ViewfinderCircleIcon className='w-6 h-6 text-black hover:text-white transition ease-in-out duration-300 cursor-pointer rounded-md animate-bounce' onClick={open}/>
+    </div> 
   )
 }
 

@@ -48,7 +48,7 @@
       @apply text-xs md:text-sm font-semibold text-[#464646]
     }
     .socialicon2{
-      @apply bg-[#ff0000] text-white p-1 w-8 h-8 rounded-full shadow-md 
+      @apply bg-[#9C0F0F] text-white p-1 w-8 h-8 rounded-full shadow-md 
     }
 }
 

@@ -63,7 +63,7 @@ function Footer() {
         
     }
   return (
-    <div className="bg-[#FF0000] ">
+    <div className="bg-[#9C0F0F] ">
         <MiniCon>
             <div className=" py-6 flex flex-col h-[100svh] sm:h-[500px] ">
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:px-3 sm:items-center 
