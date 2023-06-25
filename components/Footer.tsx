@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import MiniCon from "./MiniCon"
-import { PaperAirplaneIcon } from "@heroicons/react/24/solid"
+import { EnvelopeIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid"
 import { FormEvent,useState } from "react"
 import Image from "next/image"
 import WhiteLogo from "@/public/images/yeye-unique-logo-white.png"
@@ -12,7 +12,7 @@ import IconBxlFacebookCircle from "./Icons/Facebook"
 import { useSession } from "next-auth/react"
 import { usePathname } from "next/navigation"
 import { ClassicSpinner } from "react-spinners-kit"
-import { InboxArrowDownIcon } from "@heroicons/react/24/solid"
+
 
 
 function Footer() {
@@ -116,7 +116,7 @@ function Footer() {
                         <Link href='https://www.tiktok.com/@yeye_unique?lang=en'><IconBxlTiktok className="socialicon"/></Link>
                         {/* <Link href=''><IconBxlFacebookCircle className="socialicon"/></Link> */}
                     </div>
-                    <p className="flex items-center justify-center gap-2 text-xs font-bold text-white text-center tracking-widest"><InboxArrowDownIcon className="w-4 h-4 text-white"/>abbey@yeyeunique.com</p>
+                    <p className="flex items-center justify-center gap-2 text-xs font-bold text-white text-center tracking-widest"><EnvelopeIcon className="w-4 h-4 text-white"/>abbey@yeyeunique.com</p>
                 </div>
             </div>
             <Link href="" className="flex justify-center text-[#febfbf] text-xs font-bold pt-24 animate-pulse">Design&Build By Alienartech</Link>

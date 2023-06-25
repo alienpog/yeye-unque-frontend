@@ -58,7 +58,7 @@ function ConFaqs() {
          <div className="mb-2 md:mb-4" key={index}>
          <div className="flex items-center justify-between py-2 px-3 bg-[#E7D6CE] rounded-lg cursor-pointer group" onClick={()=>{Setshow(index)}}>
          <h1 className="text-[#464646] text-xs font-medium group-hover:text-white transition-all duration-300 ease-in-out ">{question}</h1>
-         <ChevronDoubleDownIcon className={`w-4 h-4 lg:w-6 lg:h-6 text-[#ff0000] ${show == index? '':'-rotate-180'} transition-all duration-300 ease-in-out`} />
+         <ChevronDoubleDownIcon className={`w-4 h-4 lg:w-6 lg:h-6 text-[#9C0F0F] ${show == index? '':'-rotate-180'} transition-all duration-300 ease-in-out`} />
          </div>
           <p className={`text-xs md:text-sm text-[#747474] px-4 ${show ==index?'h-auto py-2':'h-0 overflow-hidden'} transition-all duration-300 ease-in-out `}>
          {answer}

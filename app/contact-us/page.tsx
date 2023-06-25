@@ -4,7 +4,7 @@ import IconBxlInstagramAlt from "@/components/Icons/Instagram";
 import IconBxlTiktok from "@/components/Icons/TikTok";
 import MiniCon from "@/components/MiniCon";
 import SectionHeader from "@/components/SectionHeader";
-import { InboxArrowDownIcon, MapPinIcon, PhoneArrowDownLeftIcon } from "@heroicons/react/24/solid";
+import { EnvelopeIcon,MapPinIcon, PhoneArrowDownLeftIcon } from "@heroicons/react/24/solid";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
@@ -131,7 +131,7 @@ function ContactUs() {
                 <p className="info">Shop location address </p>
             </div>
             <div className="flex space-x-2 items-center">
-                <InboxArrowDownIcon className="w-4 h-4 text-[#9C0F0F]"/>
+                <EnvelopeIcon className="w-4 h-4 text-[#9C0F0F]"/>
                 <p className="info">abbey@yeyeunique.com</p>
             </div>
             <div className="flex space-x-2 items-center">
