@@ -46,7 +46,7 @@ function Comments({ id, details }: Props) {
     };
     const interval = setInterval(() => {
     fetchComments();
-    }, 1000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [id]);
   
@@ -57,7 +57,7 @@ function Comments({ id, details }: Props) {
         if (!post)return;
         const input = post.trim();
         Setpost("")
-        setCommentData((prev : any) =>[...prev, {user:session?.user?.name,comment: input,image: session?.user?.image}]);
+        setCommentData((prev : any) =>[{user:session?.user?.name,comment: input,image: session?.user?.image}, ...prev]);
         fetch(`https://yeye-unique-backend-production.up.railway.app/postcomment/${id}/`,
         {
           method: 'POST',
@@ -82,7 +82,7 @@ function Comments({ id, details }: Props) {
   return (
     <>
     <div className={`${!commentData.length && 'h-0 overflow-hidden'} ${details && "mt-4"}`}>
-      <div className="flex border-b-2   rounded-sm border-b-[#ECD7CE] px-2 pb-[4px] shadow ">
+      <div className="flex border-b-2   rounded-sm border-b-[#ECD7CE] px-2 pb-[4px]">
         <h2 className="text-xs text-black font-semibold">comments</h2>
         <span className="ml-auto text-[#747474] text-xs font-semibold">{formattedNumber}</span>
       </div>
