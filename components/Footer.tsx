@@ -116,7 +116,7 @@ function Footer() {
                         <Link href='https://www.tiktok.com/@yeye_unique?lang=en'><IconBxlTiktok className="socialicon"/></Link>
                         {/* <Link href=''><IconBxlFacebookCircle className="socialicon"/></Link> */}
                     </div>
-                    <p className="flex items-center justify-center gap-2 text-xs font-bold text-white text-center tracking-widest"><EnvelopeIcon className="w-4 h-4 text-white"/>abbey@yeyeunique.com</p>
+                    <p className="flex items-center justify-center gap-2 text-xs font-bold text-white text-center tracking-widest"><EnvelopeIcon className="w-4 h-4 text-white"/>info@yeyeunique.com</p>
                 </div>
             </div>
             <Link href="" className="flex justify-center text-[#febfbf] text-xs font-bold pt-24 animate-pulse">Design&Build By Alienartech</Link>

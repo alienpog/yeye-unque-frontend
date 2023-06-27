@@ -126,17 +126,17 @@ function ContactUs() {
         
         </div>
         <div className="flex flex-col items-start space-y-4 md:space-y-7 mb-4">
-            <div className="flex space-x-2 items-center">
-                <MapPinIcon className="w-4 h-4 text-[#9C0F0F]"/>
-                <p className="info">Shop location address </p>
+            <div className="flex space-x-2 items-end">
+                <MapPinIcon className="w-5 h-5 text-[#9C0F0F]"/>
+                <p className="info">Suite A1 Sikombs Plaza, 113, idi iroko Expressway Baby 'o' Bus-Stop, Oju-Ore Ota, Ogun State. </p>
             </div>
             <div className="flex space-x-2 items-center">
                 <EnvelopeIcon className="w-4 h-4 text-[#9C0F0F]"/>
-                <p className="info">abbey@yeyeunique.com</p>
+                <p className="info">info@yeyeunique.com</p>
             </div>
             <div className="flex space-x-2 items-center">
                 <PhoneArrowDownLeftIcon className="w-4 h-4 text-[#9C0F0F]"/>
-                <p className="info">+234 701 4074 694</p>
+                <p className="info">0701 4074 694</p>
             </div>
             <div className="w-full flex items-center justify-start space-x-6 mt-3 mb-4">
                 {/* <Link href=''><IconBxlInstagramAlt className="socialicon2"/></Link> */}

@@ -56,8 +56,8 @@ function Comments({ id, details }: Props) {
         if(!session)return dispatch(loginopen());
         if (!post)return;
         const input = post.trim();
-        // setCommentData((prev : any) =>[...prev, {user:session?.user?.name,comment: input,image: session?.user?.image}]);
         Setpost("")
+        setCommentData((prev : any) =>[...prev, {user:session?.user?.name,comment: input,image: session?.user?.image}]);
         fetch(`https://yeye-unique-backend-production.up.railway.app/postcomment/${id}/`,
         {
           method: 'POST',
@@ -74,7 +74,7 @@ function Comments({ id, details }: Props) {
   if (isLoading) 
     return( 
      <div className=" w-full my-4 flex item-center justify-center">
-        <img src="/images/logo-animi-red.gif" className="h-6 object-contain" alt="loader" />
+        <img src="/images/logo-animi-red.gif" className="h-6 object-contain" alt="loader"/>
       </div>
      ) 
   

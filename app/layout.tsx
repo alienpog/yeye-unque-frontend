@@ -33,7 +33,7 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions)
   return (
     <html lang="en">
-        <body className='bg-[#F2F2F2]'> 
+      <body className='bg-[#F2F2F2]'> 
           <SessionProvider session={session}>
           <Providers>
           <meta
