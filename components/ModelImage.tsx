@@ -51,7 +51,7 @@ function ModelImage() {
                       >     
                       <Dialog.Overlay className="w-full h-full flex items-center justify-center">
                       {/* @ts-ignore */}
-                      <Image src={product} alt={`${product}.${index}`} key={index} width={300} height={400} placeholder='blur' blurDataURL='URL' className='shadow-lg object-contain'/>
+                      <Image src={product} alt={`${product}.${index}`} key={index} width={300} height={400} placeholder='blur' blurDataURL='URL' className='shadow-lg object-contain rounded-2xl'/>
                       </Dialog.Overlay>
                       </Transition.Child>
                   </SwiperSlide>
