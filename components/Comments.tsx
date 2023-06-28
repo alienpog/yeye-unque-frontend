@@ -81,6 +81,7 @@ function Comments({ id, details }: Props) {
 
   return (
     <>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
     <div className={`${!commentData.length && 'h-0 overflow-hidden'} ${details && "mt-4"}`}>
       <div className="flex border-b-2   rounded-sm border-b-[#ECD7CE] px-2 pb-[4px]">
         <h2 className="text-xs text-black font-semibold">comments</h2>

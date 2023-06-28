@@ -36,10 +36,6 @@ export default async function RootLayout({
       <body className='bg-[#F2F2F2]'> 
           <SessionProvider session={session}>
           <Providers>
-          <meta
-         name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1"
-          />
           <GoogleAnalytics GA_MEASUREMENT_ID='G-8QH9B4MVXC'/>
           <NotLogin/> 
           <ModelImage/>

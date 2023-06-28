@@ -48,7 +48,7 @@
       @apply text-xs md:text-sm font-semibold text-[#464646]
     }
     .socialicon2{
-      @apply bg-[#9C0F0F] text-white p-1 w-8 h-8 rounded-full shadow-md 
+      @apply bg-[#9C0F0F] text-white p-1 w-8 h-8 rounded-full drop-shadow-md hover:shadow-none transition-all duration-500 ease-in-out 
     }
 }
 
@@ -78,8 +78,10 @@
 }
 .socialicon{
   color: white;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
+  padding: 4px !important;
+  border-radius: 50% !important;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   transition: box-shadow 0.5s ease-out;
 }

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import MiniCon from "./MiniCon"
-import { EnvelopeIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid"
+import { EnvelopeIcon, PaperAirplaneIcon, PhoneArrowDownLeftIcon } from "@heroicons/react/24/solid"
 import { FormEvent,useState } from "react"
 import Image from "next/image"
 import WhiteLogo from "@/public/images/yeye-unique-logo-white.png"
@@ -18,6 +18,8 @@ import { ClassicSpinner } from "react-spinners-kit"
 function Footer() {
     const {data: session}= useSession()
     const pathname = usePathname()
+    const today = new Date();
+    const year = today.getFullYear();
    
 // summitting email
     const [error, Seterror]=useState("")
@@ -64,6 +66,7 @@ function Footer() {
     }
   return (
     <div className="bg-[#9C0F0F] ">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
         <MiniCon>
             <div className=" py-6 flex flex-col h-[100svh] sm:h-[500px] ">
             <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:px-3 sm:items-center 
@@ -112,14 +115,15 @@ function Footer() {
                         <Image src={WhiteLogo} className=" h-[65px] w-[60px] object-contain" alt="blacklogo"/>
                     <p className="text-xs font-bold text-white/80 text-center">We make our client Unique</p>
                     <div className="flex items-center justify-center space-x-4 ">
-                        {/* <Link href=''><IconBxlInstagramAlt className="socialicon"/></Link> */}
+                        <Link href='https://www.instagram.com/yeye_unique_fashion/'><IconBxlInstagramAlt className="socialicon"/></Link>
                         <Link href='https://www.tiktok.com/@yeye_unique?lang=en'><IconBxlTiktok className="socialicon"/></Link>
                         {/* <Link href=''><IconBxlFacebookCircle className="socialicon"/></Link> */}
                     </div>
                     <p className="flex items-center justify-center gap-2 text-xs font-bold text-white text-center tracking-widest"><EnvelopeIcon className="w-4 h-4 text-white"/>info@yeyeunique.com</p>
+                    <p className="flex items-center justify-center gap-2 text-xs font-bold text-white text-center tracking-widest"><PhoneArrowDownLeftIcon className="w-4 h-4 text-white"/>0701 4074 694</p>
                 </div>
             </div>
-            <Link href="" className="flex justify-center text-[#febfbf] text-xs font-bold pt-24 animate-pulse">Design&Build By Alienartech</Link>
+            <Link href="" className="flex justify-center text-[#febfbf] text-xs font-bold pt-12 animate-pulse">Copywrite © {year} Alienartech</Link>
             </div>
         </MiniCon>
     </div>

@@ -86,6 +86,7 @@ function ContactUs() {
     
     <MiniCon>
     <main className="min-h-[100svh] pt-6 md:pt-12  ">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
      <SectionHeader conheader="Contact Us" red={false}/>
      <div className=" grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-6 md:gap-24 mt-2 md:mt-6 lg:mt-12">
         <div>
@@ -139,7 +140,7 @@ function ContactUs() {
                 <p className="info">0701 4074 694</p>
             </div>
             <div className="w-full flex items-center justify-start space-x-6 mt-3 mb-4">
-                {/* <Link href=''><IconBxlInstagramAlt className="socialicon2"/></Link> */}
+                <Link href='https://www.instagram.com/yeye_unique_fashion/'><IconBxlInstagramAlt className="socialicon2"/></Link>
                 <Link href='https://www.tiktok.com/@yeye_unique?lang=en'><IconBxlTiktok className="socialicon2"/></Link>
                 {/* <Link href=''><IconBxlFacebookCircle className="socialicon2"/></Link> */}
             </div>
