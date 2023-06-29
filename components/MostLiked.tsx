@@ -11,6 +11,7 @@ const quarydesign = async()=>{
 
 
 async function MostLiked() {
+  // checked out
     const LikedDesign = await quarydesign()
   return (
     <div className="header">
