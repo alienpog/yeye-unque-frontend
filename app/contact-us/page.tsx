@@ -115,7 +115,7 @@ function ContactUs() {
                 type="submit">
                     {loading?<ClassicSpinner size={15} color="white"/>:"Send"}
               </button>
-              <Link href="https://wa.me/07014074694"className="text-xs text-white font-bold py-2 px-6 bg-green-900 
+              <Link href="https://wa.me/+2347014074694"className="text-xs text-white font-bold py-2 px-6 bg-green-900 
                 rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer ">
                 <span className="mr-2 font-bold animate-pulse"> OR </span>Chat Us On Whatsapp
                 </Link>   
