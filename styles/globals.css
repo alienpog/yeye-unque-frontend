@@ -4,7 +4,7 @@
 
 @layer components{
     .topnav{
-      @apply py-[4px] px-[8px] sm:py-2 sm:px-6 text-center hover:bg-[#E7D6CE] rounded-full 
+      @apply py-[3px] px-[6px] sm:py-2 sm:px-4 text-center hover:bg-[#E7D6CE] rounded-full 
       transition duration-150 ease-out hover:ease-in cursor-pointer
     }
     
@@ -49,6 +49,9 @@
     }
     .socialicon2{
       @apply bg-[#9C0F0F] text-white p-1 w-8 h-8 rounded-full drop-shadow-md hover:shadow-none transition-all duration-500 ease-in-out 
+    }
+    .nav-icon{
+      @apply h-[20px] lg:h-[24px] object-contain text-[#333333]
     }
 }
 

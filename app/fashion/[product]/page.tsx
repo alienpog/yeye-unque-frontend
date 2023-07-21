@@ -24,12 +24,13 @@ function Products({params:{product}}:props){
   // changing the url backend later
   useEffect(()=>{
     const queryproducts = async() => {
-      if(page == 'http://yeye-unique-backend-production.up.railway.app/'+product+'/'){
-        return  (page.replace('http://yeye-unique-backend-production.up.railway.app/'+product+'/',''),
+      // http://yeye-unique-backend-production.up.railway.app/
+      if(page == 'http://127.0.0.1:8000/'+product+'/'){
+        return  (page.replace('http://127.0.0.1:8000/'+product+'/',''),
                  router.replace('/fashion/'+product)
         )          
       }
-      const url = page?"https://yeye-unique-backend-production.up.railway.app/"+product+"/?page="+ page : 'https://yeye-unique-backend-production.up.railway.app/'+product;
+      const url = page?"http://127.0.0.1:8000/"+product+"/?page="+ page : 'http://127.0.0.1:8000/'+product;
       const res = await fetch(url);
       const data  = await res.json();
       Setproduct(data)

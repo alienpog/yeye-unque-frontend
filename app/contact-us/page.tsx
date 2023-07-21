@@ -28,7 +28,7 @@ function ContactUs() {
     const {data: session} = useSession();
     useEffect(()=>{
         async function getUserData(){
-            const res =await fetch(`https://yeye-unique-backend-production.up.railway.app/gettingform/`,
+            const res =await fetch(`http://127.0.0.1:8000/gettingform/`,
             {
                 method: "POST",
                 headers: {
@@ -54,7 +54,8 @@ function ContactUs() {
         const domain = input_email.substring(input_email.lastIndexOf("@"))
         if(domain == "@gmail.com"){
             if(number.match(phoneno)){
-                const res= await fetch(`https://yeye-unique-backend-production.up.railway.app/postingform/`,
+                // https://yeye-unique-backend-production.up.railway.app/
+                const res= await fetch(`http://127.0.0.1:8000/postingform/`,
                 {
                     method: "POST",
                     headers: {

@@ -1,6 +1,6 @@
 'use client'
 
-import {Bars3Icon, AdjustmentsVerticalIcon } from '@heroicons/react/24/solid'
+import {Bars3Icon, AdjustmentsVerticalIcon, PaperAirplaneIcon, } from '@heroicons/react/24/solid'
 import Link  from "next/link";
 import { useEffect, useState } from "react";
 import Offers from "./Offers";
@@ -8,6 +8,7 @@ import MenuModel from "./MenuModel";
 import { signOut, useSession } from "next-auth/react"
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
+import {  ListBulletIcon, MagnifyingGlassIcon, ShoppingBagIcon} from '@heroicons/react/24/outline';
 
 function NavgationTab() {
   const pathname = usePathname()
@@ -17,11 +18,18 @@ function NavgationTab() {
    //fitter for navigation 
    const [Active, SetActive]= useState(false);
 
+   //Search for navigation 
+   const [Search, setSearch]= useState(false);
+  
+
   //  menu navigation
    const [MenuActive2, MenuSetActive2]= useState(false);
 
   //scrolling for navigation
   const [Show, SetShow] = useState(false)
+
+  // input search navigation
+ const [Post, setPost] = useState("")
 
   useEffect(() => {
    
@@ -73,30 +81,48 @@ function NavgationTab() {
   return (
       <>
       <nav className={` sticky top-0 w-full flex text-[#333333] bg-[#F2F2F2] text-xs font-medium items-center justify-between z-20`}>
-
-          <Link href= "/">
-           <img className="h-[32px] object-contain pl-2 sm:hidden" src ="/images/yeye-unique-logo-phone.png" alt="yeye-logo-red"/>
-           <img className=" h-[50px] object-contain py-2 pl-3 hidden sm:flex" src ="/images/yeye-unique-logo.png" alt="yeye-logo-red"/>
+        <div className='w-full sm:w-auto flex items-center justify-between sm:justify-center sm:gap-3'>
+        <Link href= "/">
+           <img className="h-[32px] object-contain shrink-0 pl-2 sm:hidden" src ="/images/yeye-unique-logo-phone.png" alt="yeye-logo-red"/>
+           <img className=" h-[50px] object-contain shrink-0 py-2 pl-3 hidden sm:flex" src ="/images/yeye-unique-logo.png" alt="yeye-logo-red"/>
           </Link> 
-      
-        <p className={`hidden sm:flex ${Active && "bg-[#E7D6CE]"} hover:sm:bg-[#E7D6CE] sm:py-1
-           sm:px-6 sm:rounded-full sm:justify-center sm:items-center transition duration-150 ease-out
-           hover:ease-in group cursor-pointer`} onClick={()=>{SetActive((prev)=>(!prev))}} >
-           Filter 
-           <AdjustmentsVerticalIcon className={`w-[12px] object-contain ml-1 ${Active && "text-[#FF0101]"} text-[#c9b6ac]
-            group-hover:text-[#FF0101] transition duration-200 ease-in-out`}/>
-        </p>
+       <div className=' flex justify-center items-center gap-2'>
+          <p className={`flex p-1 ${Search && "bg-[#E7D6CE]"} hover:sm:bg-[#E7D6CE] sm:py-1
+            sm:px-4 rounded-full justify-center items-center transition duration-150 ease-out
+            hover:ease-in group cursor-pointer`} onClick={()=>{ SetActive(false), setSearch((prev)=>(!prev))}} >
+              <MagnifyingGlassIcon className="w-[14px] sm:w:[12px] font-bold object-contain mr-1 text-[#FF0101]"/>
+            <span className='hidden sm:inline'>Search</span>   
+          </p>
+          <p className={`hidden sm:flex ${Active && "bg-[#E7D6CE]"} hover:sm:bg-[#E7D6CE] sm:py-1
+            sm:px-4 sm:rounded-full sm:justify-center sm:items-center transition duration-150 ease-out
+            hover:ease-in group cursor-pointer`} onClick={()=>{setSearch(false),SetActive((prev)=>(!prev))}} >
+            <AdjustmentsVerticalIcon className="w-[12px] object-contain mr-1 text-[#FF0101]"/>
+            Filter 
+          </p>
+       </div>
+        </div>
+
+       <div className=' flex items-center justify-center gap-5 mx-3'>
+        <div className='relative cursor-pointer'>
+           <ShoppingBagIcon className='nav-icon'/>
+           <span className=' absolute top-[-2px] right-[-16px] bg-[#FF0101] w-[24px] h-[14px] flex items-center justify-center text-white text-[12px] rounded-full'>900</span>
+        </div> 
+        <div className='relative cursor-pointer'>
+           <ListBulletIcon className='nav-icon'/>
+           <span className=' absolute top-[-2px] right-[-16px] bg-[#FF0101] w-[24px] h-[14px] flex items-center justify-center text-white text-[12px] rounded-full'>0</span>
+        </div> 
+       </div>
        
-        <div className=" px-1 sm:px-4 md:px-6 flex items-center justify-center space-x-2">
+        <div className=" px-1 sm:px-3 flex items-center justify-center space-x-1">
         <p className={`hidden topnav lg:flex ${pathname =="/" && "bg-[#E7D6CE]"}`} onClick={()=>{router.push('/')}}>Home</p>
             <p className={`hidden topnav lg:flex ${pathname =="/fashion/allproducts" && "bg-[#E7D6CE]"}`} onClick={()=>{router.push('/fashion/allproducts')}}>All Design</p>
             <p className={`hidden topnav lg:flex ${pathname =="/about-us" && "bg-[#E7D6CE]"}`} onClick={()=>{router.push('/about-us')}}>About Us</p>
             <p className={`hidden topnav lg:flex  ${pathname =="/faqs" && "bg-[#E7D6CE]"}`} onClick={()=>{router.push('/faqs')}}>FAQ’S</p>
             <p className={`hidden topnav lg:flex ${pathname =="/contact-us" && "bg-[#E7D6CE]"}`} onClick={()=>{router.push('/contact-us')}}>Contact Us</p>
             { session? (
-             <div className="flex items-center topnav gap-2" onClick={()=>signOut()}>
+             <div className="flex items-center justify-center topnav gap-2" onClick={()=>signOut()}>
               <img className="w-6 h-6 object-contain rounded-full animate-spin" loading="lazy" src={session?.user?.image ||"/images/Avatar-Profile-PNG.png" } alt="avatar" />
-              <p> LogOut</p>
+              <span className='hidden sm:inline'>Account</span>
              </div>
             ):
               <p className={`topnav ${pathname =="/login" && "bg-[#E7D6CE]"}`} onClick={()=>{router.push('/login')}}> Login</p>
@@ -117,6 +143,18 @@ function NavgationTab() {
 
         </div>
       </div>
+      <form className={`w-full flex " ${Search? 'opacity-1 h-[42px] ':'opacity-0 h-0'} transition-all duration-300 ease-in-out `}>
+        <div className='w-full h-full max-w-2xl mx-2 sm:mx-auto flex items-center justify-center space-x-1 rounded-lg'>
+        <div className="py-1 sm:py-2 pl-2 h-full bg-[#F2F2F2] flex-1 flex items-center justify-start rounded-l-lg border-2 border-[#E8D7D0]">
+        <MagnifyingGlassIcon className="w-3 object-contain mr-1 text-red-300"/>
+        <input type="text" value={Post} onChange={(e)=>{setPost(e.target.value)}} className=" flex-1 text-black text-xs placeholder-red-300 focus:ring-0 outline-none
+        border-none  bg-transparent" placeholder="Seach Design..." />
+        </div>
+        <button type='submit' disabled={!Post} className="flex bg-[#E8D7D0] rounded-r-lg h-full w-9 md:w-10 justify-center items-center border-none outline-none text-black disabled:text-black/10 disabled:cursor-not-allowed transition-all delay-300 ease-in-out">
+        <MagnifyingGlassIcon className="w-4 h-4"/></button>
+        </div>
+     
+      </form>
       <Offers show={Show} active={Active}/>
       <MenuModel onclick = {closemenu} menuactive={MenuActive2}/>
       </>

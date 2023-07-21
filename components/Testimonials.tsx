@@ -9,7 +9,7 @@ interface testimonials {
 }
 
 const fetchtestimonials = async() => {
- const res = await fetch(`https://yeye-unique-backend-production.up.railway.app/testimonials/`,{ next:{revalidate:60*60*24}})
+ const res = await fetch(`http://127.0.0.1:8000/testimonials/`,{ next:{revalidate:60*60*24}})
  const data : testimonials[] = await res.json()
  return data
 }

@@ -5,7 +5,8 @@ import Button from './Button';
 
 
 const queryproducts = async() => {
-  const res = await fetch(`${process.env.BACKEND_URL}/allproducts/`, { next:{revalidate:60*60*24}});
+  // ${process.env.BACKEND_URL}
+  const res = await fetch(` http://127.0.0.1:8000/allproducts/`, { next:{revalidate:60*60*24}});
   const products : Item2 = await res.json();
   return products;
 
