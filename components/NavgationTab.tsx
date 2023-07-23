@@ -5,10 +5,11 @@ import Link  from "next/link";
 import { useEffect, useState } from "react";
 import Offers from "./Offers";
 import MenuModel from "./MenuModel";
-import { signOut, useSession } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import {  ListBulletIcon, MagnifyingGlassIcon, ShoppingBagIcon} from '@heroicons/react/24/outline';
+import AccountMenu from './AccountMenu';
 
 function NavgationTab() {
   const pathname = usePathname()
@@ -24,6 +25,9 @@ function NavgationTab() {
 
   //  menu navigation
    const [MenuActive2, MenuSetActive2]= useState(false);
+
+  //  account navigation
+   const [Accountactive, setAccountactive]= useState(false);
 
   //scrolling for navigation
   const [Show, SetShow] = useState(false)
@@ -74,10 +78,15 @@ function NavgationTab() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [Show]);
 
+   //  close model-menu
    const closemenu = () =>{
     MenuSetActive2(false)
    }
   
+  //  close accounts menu
+   const closeaccount = () =>{
+    setAccountactive(false)
+   }
   return (
       <>
       <nav className={` sticky top-0 w-full flex text-[#333333] bg-[#F2F2F2] text-xs font-medium items-center justify-between z-20`}>
@@ -120,7 +129,7 @@ function NavgationTab() {
             <p className={`hidden topnav lg:flex  ${pathname =="/faqs" && "bg-[#E7D6CE]"}`} onClick={()=>{router.push('/faqs')}}>FAQ’S</p>
             <p className={`hidden topnav lg:flex ${pathname =="/contact-us" && "bg-[#E7D6CE]"}`} onClick={()=>{router.push('/contact-us')}}>Contact Us</p>
             { session? (
-             <div className="flex items-center justify-center topnav gap-2" onClick={()=>signOut()}>
+             <div className={`flex items-center justify-center topnav gap-2 ${Accountactive && "bg-[#E7D6CE]"}`} onClick={()=>setAccountactive((prev)=>!prev)}>
               <img className="w-6 h-6 object-contain rounded-full animate-spin" loading="lazy" src={session?.user?.image ||"/images/Avatar-Profile-PNG.png" } alt="avatar" />
               <span className='hidden sm:inline'>Account</span>
              </div>
@@ -143,8 +152,8 @@ function NavgationTab() {
 
         </div>
       </div>
-      <form className={`w-full flex " ${Search? 'opacity-1 h-[42px] ':'opacity-0 h-0'} transition-all duration-300 ease-in-out `}>
-        <div className='w-full h-full max-w-2xl mx-2 sm:mx-auto flex items-center justify-center space-x-1 rounded-lg'>
+      <form className={`w-full flex " ${Search? ' opacity-1 h-[24px] my-1 sm:my-0 sm:h-[42px] ':'opacity-0 h-0'} transition-all duration-300 ease-in-out `}>
+        <div className='w-full h-full max-w-3xl mx-4 md:mx-auto flex items-center justify-center space-x-1 rounded-lg'>
         <div className="py-1 sm:py-2 pl-2 h-full bg-[#F2F2F2] flex-1 flex items-center justify-start rounded-l-lg border-2 border-[#E8D7D0]">
         <MagnifyingGlassIcon className="w-3 object-contain mr-1 text-red-300"/>
         <input type="text" value={Post} onChange={(e)=>{setPost(e.target.value)}} className=" flex-1 text-black text-xs placeholder-red-300 focus:ring-0 outline-none
@@ -156,7 +165,9 @@ function NavgationTab() {
      
       </form>
       <Offers show={Show} active={Active}/>
+      <AccountMenu onclick={closeaccount} accountactive={Accountactive}/>
       <MenuModel onclick = {closemenu} menuactive={MenuActive2}/>
+      
       </>
       
   )

@@ -35,6 +35,7 @@ const sacramento = Sacramento({
   }: Item) {
     const router =useRouter()
     const [activeImage, setActiveImage] = useState(image);
+    console.log("img2>>>>>>",image)
     return (
       <MiniCon>
         <div className='max-w-5xl mx-auto sm:h-[100svh] mt-4'>
@@ -53,7 +54,7 @@ const sacramento = Sacramento({
             <div className='flex space-x-2 items-center justify-start h-130 mt-2 overflow-y-hidden overflow-x-scroll scrollbar-thumb-rounded-md scrollbar-thumb-[#E7D6CE] scrollbar-thin'>
             <Image src={image} alt={`${name}${id}`} width={500} height={500} placeholder='blur' blurDataURL='URL'
             className='small-image'
-            onClick={()=>{setActiveImage(image)}} />
+            onClick={()=>{setActiveImage(image)}}/>
             
             <>
                 {cropimages?.map((cropImage: string, index: number) => (
@@ -89,10 +90,18 @@ const sacramento = Sacramento({
                  {old_price && <h2 className='text-sm font-bold text-black/50 lg:text-lg line-through'>N{old_price}K</h2>}
                 </div>     
             </div> 
-            <div className="text-xs bg-[#9C0F0F] text-white font-medium py-2 px-6 max-w-[150px]
-                rounded-full text-center shadow-md hover:shadow-none transition-all duration-300 ease-in-out cursor-pointer mb-2 " onClick={()=>{router.push('/contact-us')}}>
-                Contact Us
-            </div>   
+            <div className='flex items-center justify-center gap-4 max-w-[200px]'>
+            <div className=" w-full text-xs bg-[#E8D7D0] text-black font-medium py-2 px-6 max-w-[150px]
+                rounded-full text-center drop-shadow-md hover:drop-shadow-none transition-all duration-300 ease-in-out cursor-pointer mb-2 " onClick={()=>{router.push('/contact-us')}}>
+                Keep
+            </div> 
+            <div className="w-full text-xs bg-[#9C0F0F] text-white font-medium py-2 px-6 max-w-[150px]
+                rounded-full text-center drop-shadow-md hover:drop-shadow-none transition-all duration-300 ease-in-out cursor-pointer mb-2 " onClick={()=>{router.push('/contact-us')}}>
+                Buy
+            </div> 
+
+            </div>
+              
         </div>
       </div>
         </div>

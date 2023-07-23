@@ -9,7 +9,7 @@ interface testimonials {
 }
 
 const fetchtestimonials = async() => {
- const res = await fetch(`http://127.0.0.1:8000/testimonials/`,{ next:{revalidate:60*60*24}})
+ const res = await fetch(`http://127.0.0.1:8000/testimonials/`,{ cache:"no-cache"})
  const data : testimonials[] = await res.json()
  return data
 }

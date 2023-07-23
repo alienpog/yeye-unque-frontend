@@ -53,6 +53,8 @@
     .nav-icon{
       @apply h-[20px] lg:h-[24px] object-contain text-[#333333]
     }
+  
+    
 }
 
 
