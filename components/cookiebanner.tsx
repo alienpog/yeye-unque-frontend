@@ -37,8 +37,8 @@ export default function CookieBanner(){
             cookies help us to understand our clients better and also give our clients a good user experience when using the application
              </p>
             </div>
-            <div className=" flex items-center justify-between mt-4">
-                <button className='modelbtn' onClick={() => setCookieConsent(false)}>Decline</button>
+            <div className="w-full max-w-[200px] mx-auto flex items-center justify-between mt-4">
+                {/* <button className='modelbtn' onClick={() => setCookieConsent(false)}>Decline</button> */}
                 <button className='modelbtn' onClick={() => setCookieConsent(true)}>Allow Cookies</button>
             </div>   
         </div>

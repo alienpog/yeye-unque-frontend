@@ -23,13 +23,13 @@ function MenuModel({onclick,menuactive}: props) {
                 <Link className={`menunav ${pathname == "/about-us" && "-translate-x-2 opacity-50"}`} href='/about-us' onClick={onclick}>About Us</Link>
                 <Link className={`menunav ${pathname == "/faqs" && "-translate-x-2 opacity-50"}`} href='/faqs'onClick={onclick}>FAQ’s</Link>
                 <Link className={`menunav ${pathname == "/contact-us" && "-translate-x-2 opacity-50"}`} href='/contact-us' onClick={onclick}>Contact Us</Link>
-                <Link className={`menunav phonemenu ${pathname == "/fashion/females" && "-translate-x-2 opacity-50"}`} href='/fashion/females'onClick={onclick}>Women-design</Link>
-                <Link className={`menunav phonemenu ${pathname == "/fashion/males" && "-translate-x-2 opacity-50"}`} href='/fashion/males'onClick={onclick}>Men-design</Link>
+                <Link className={`menunav phonemenu ${pathname == "/fashion/female" && "-translate-x-2 opacity-50"}`} href='/fashion/female'onClick={onclick}>Women-design</Link>
+                <Link className={`menunav phonemenu ${pathname == "/fashion/male" && "-translate-x-2 opacity-50"}`} href='/fashion/male'onClick={onclick}>Men-design</Link>
                 <Link className={`menunav phonemenu ${pathname == "/fashion/kids" && "-translate-x-2 opacity-50"}`} href='/fashion/kids'onClick={onclick}>Kids-design</Link>
                 <Link className={`menunav phonemenu ${pathname == "/fashion/men-shoes" && "-translate-x-2 opacity-50"}`} href='/fashion/men-shoes'onClick={onclick}>Men-shoe</Link>
                 <Link className={`menunav phonemenu ${pathname == "/fashion/men-caps" && "-translate-x-2 opacity-50"}`} href='/fashion/men-caps'onClick={onclick}>Men-cap</Link>
-                <Link className={`menunav phonemenu ${pathname == "/fashion/jewelrys" && "-translate-x-2 opacity-50"}`} href='/fashion/jewelrys'onClick={onclick}>Jewelleries</Link>
-                <Link className={`menunav phonemenu ${pathname == "/fashion/watches" && "-translate-x-2 opacity-50"}`} href='/fashion/watches'onClick={onclick}>watches</Link>
+                <Link className={`menunav phonemenu ${pathname == "/fashion/Jewelleries" && "-translate-x-2 opacity-50"}`} href='/fashion/Jewelleries'onClick={onclick}>Jewelleries</Link>
+                <Link className={`menunav phonemenu ${pathname == "/fashion/wristwatches" && "-translate-x-2 opacity-50"}`} href='/fashion/wristwatches'onClick={onclick}>watches</Link>
                 <Link className={`menunav phonemenu ${pathname == "/fashion/women-bags" && "-translate-x-2 opacity-50"}`} href='/fashion/women-bags'onClick={onclick}>Women-bag</Link>
             </div>
         </MiniCon>

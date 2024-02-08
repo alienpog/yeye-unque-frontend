@@ -16,7 +16,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 function ModelImage() {
-  const open = useAppSelector((state :RootState) => state.openReducer.value);
+  const open = useAppSelector((state :RootState) => state.openReducer?.value);
   const products = useAppSelector((state :RootState) => state.productReducer.value);
   const dispatch = useAppDispatch();
   const router= useRouter();
@@ -68,7 +68,7 @@ function ModelImage() {
                     leaveTo="opacity-0 scale-95"
                    >
                     <Dialog.Overlay className="w-full h-full flex items-center justify-center">
-                    <Dialog.Overlay className="w-full max-w-md h-auto transform overflow-hidden rounded-2xl bg-[#9C0F0F] p-6 text-left align-middle shadow-2xl transition-all mx-12">
+                    <Dialog.Overlay className="w-full space-y-6 max-w-md h-auto transform overflow-hidden rounded-2xl bg-[#9C0F0F] p-6 text-left align-middle shadow-2xl transition-all mx-12">
                     <Dialog.Title >
                         <SectionHeader conheader='More Info' red />
                     </Dialog.Title>
@@ -77,8 +77,7 @@ function ModelImage() {
                         Check Design to see more details about the Design
                         </p>
                     </Dialog.Overlay>
-
-                    <Dialog.Overlay className=" flex items-center justify-between mt-4">
+                    <Dialog.Overlay className="flex items-center justify-between mx-auto space-x-6">
                         <div className='modelbtn' onClick= {() => {dispatch(closeitem()),router.push(`/productdetails/${products.slug!}`)}} >Check Design</div>
                         <div className='modelbtn' onClick={()=>{dispatch(closeitem())}}>Close</div>
                     </Dialog.Overlay>

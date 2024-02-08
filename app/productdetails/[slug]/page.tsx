@@ -1,5 +1,6 @@
 import ProductDetails from "@/components/ProductDetails";
 import { Item, } from "@/product";
+import BACKEND_URL from "@/src/apiConfig";
 import { Metadata, } from "next";
 import { notFound } from "next/navigation";
 
@@ -14,7 +15,7 @@ export async function generateMetadata(
   { params: {slug}}: props
 ): Promise<Metadata> {
 
-  const product = await fetchProduct(slug) 
+  const product = await fetchProduct(slug)
  
   if(!product) return {
     title: "Not Found",
@@ -30,20 +31,22 @@ export async function generateMetadata(
 }
 
 const fetchProduct = async(slug : string) => {
-   const res= await fetch(`${process.env.BACKEND_URL}/product/${slug}`,{ next:{revalidate:60*60*24}})
-   const data : Item = await res.json()
-   return data
+  const res= await fetch(`${BACKEND_URL}product/${slug}`,{cache:"no-cache"})
+  const data : Item = await res.json()
+  return data
 }
 
 
 
 async function Page({params :{slug}}:props) {
     const product = await fetchProduct(slug)
+
     if(product.id == undefined)return notFound(); 
   return (
     <>
-        <ProductDetails key={product.id} id={product.id} name={product.name} image={product.image} 
-        description={product.description} description_span={product.description_span} price={product.price} old_price={product.old_price} cropimages={product.crop_images}/>
+      <ProductDetails key={product.id} id={product.id} name={product.name} image={product.image} 
+      description={product.description} description_span={product.description_span} video={product.video} measurement={product.measurement}
+      price={product.price} old_price={product.old_price} cropimages={product.crop_images}/>
     </>
   )
 }
@@ -52,7 +55,7 @@ export default Page
 
 
 export async function generateStaticParams() {
-  const res = await fetch(`${process.env.BACKEND_URL}/none`,{next:{revalidate:60*60*24}})
+  const res = await fetch(`${BACKEND_URL}none`,{cache:"no-cache"})
   const data: Item[]= await res.json();
   if(!data) return[];
   return data.map((item) =>({

@@ -5,7 +5,7 @@ import SectionHeader from "./SectionHeader"
 function AllDesign() {
   return (
     <div className="header">
-      <SectionHeader conheader="latest Design" red={false}/>
+      <SectionHeader conheader="Latest Design" red={false}/>
       {/* @ts-ignore */}
       <Products/> 
     </div>

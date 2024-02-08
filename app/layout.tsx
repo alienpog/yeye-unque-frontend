@@ -1,4 +1,3 @@
-import NavgationTab from '@/components/NavgationTab'
 import '../styles/globals.css'
 import Footer from '@/components/Footer'
 import ModelImage from '@/components/ModelImage'
@@ -8,8 +7,14 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import NotLogin from '@/components/NotLogin'
 import { Metadata } from 'next'
-import CookieBanner from '@/components/cookiebanner';
-import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieBanner from '@/components/cookiebanner'
+import GoogleAnalytics from "@/components/GoogleAnalytics"
+import CartItemsQuery from '@/components/CartItemsQuery'
+import ListItems from '@/components/ListItems'
+import NavigationCheck from '@/components/NavigationCheck'
+import FooterCheck from '@/components/FooterCheck'
+
+
 
 
 export const metadata: Metadata = {
@@ -34,19 +39,22 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className='bg-[#F2F2F2]'> 
-          <SessionProvider session={session}>
-          <Providers>
-          <GoogleAnalytics GA_MEASUREMENT_ID='G-8QH9B4MVXC'/>
-          <NotLogin/> 
-          <ModelImage/>
-          <NavgationTab/>  
-          {children} 
-           <Footer/> 
-           <CookieBanner/>
-           </Providers>
-          </SessionProvider>
-        </body> 
-    </html>
-   
+        <SessionProvider session={session}>
+        <Providers>
+        <GoogleAnalytics GA_MEASUREMENT_ID='G-8QH9B4MVXC'/>
+        <NotLogin/> 
+        <ModelImage/>
+        {/* @ts-ignore */}
+        <CartItemsQuery/>
+        {/* @ts-ignore */}
+        <ListItems/>
+        <NavigationCheck/>
+        {children} 
+        <FooterCheck/>
+        <CookieBanner/>
+        </Providers>
+        </SessionProvider>
+      </body> 
+    </html>   
   )
 }

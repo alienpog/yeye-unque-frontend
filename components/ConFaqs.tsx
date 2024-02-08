@@ -22,6 +22,22 @@ const query =[
         "answer":"Yes, we offer alteration services to ensure the perfect fit for your clothing."
     },
     {
+        "question":"Are the women's bags made from quality materials?",
+        "answer":"Absolutely. We prioritize the use of high-quality materials to ensure that our women's bags are not only stylish but also durable and reliable for everyday use."
+    },
+    {
+        "question":"Can I find men's shoes suitable for formal occasions and casual outings?",
+        "answer":"Certainly. Our collection includes men's shoes suitable for various occasions, from formal business meetings to casual outings. We have options that blend style and versatility."
+    },
+    {
+        "question":"Are your watches made with high-quality materials?",
+        "answer":"Yes, our watches are crafted from high-quality materials to ensure precision, durability, and a stylish appearance. We prioritize quality and attention to detail in every timepiece."
+    },
+    {
+        "question":"What types of jewelry do offer?",
+        "answer":"We offers a diverse range of jewelry, including necklaces, bracelets, earrings, rings, and more. Our collection encompasses both classic and contemporary designs to suit various tastes and occasions."
+    },
+    {
         "question":"How can I schedule a consultation?",
         "answer":"You can schedule a consultation by contacting us via email or phone, or by filling out the contact form on our website."
     },
@@ -30,8 +46,8 @@ const query =[
         "answer":"We do not accept returns on custom-made or altered items. However, we will work with you to ensure your satisfaction with the final product."
     },
     {
-        "question":"Can I see examples of your past work?",
-        "answer":"Yes, we have a portfolio of our past designs that we can share with you during the consultation process."
+        "question":"Do you have physical store or showroom where I can visit?",
+        "answer":"Currently, our primary presence is online, allowing us to reach a global audience. You can explore our collections and make purchases through our website, ensuring a convenient and accessible shopping experience."
     },
     {
         "question":"What materials do you use in your designs?",
@@ -45,6 +61,7 @@ const query =[
         "question":"Do you offer international shipping?",
         "answer":"Yes, we offer international shipping, but additional fees may apply depending on the destination. Please contact us for more information."
     },
+
 ]
 function ConFaqs() {
     const[show,Setshow] = useState<number>(0)

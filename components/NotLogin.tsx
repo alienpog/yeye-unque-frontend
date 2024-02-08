@@ -41,14 +41,15 @@ function NotLogin() {
                     <Dialog.Title >
                         <SectionHeader conheader='Login Required' red />
                     </Dialog.Title>
+                    <div className='space-y-6'>
                     <div className="mt-2">
                         <p className="text-xs md:text-sm text-white text-center">
-                        you need to log in with your Gmail so you can like and comment on each Design and we will send you the Latest Design to your Gmail with tips and tricks so you look unique anywhere you go! </p>
+                        you need to login with your Email so you can keep items, add to bag, like design, drop reviews on each design, winning Gifts and we also be sending you the Latest Design to your Email with tips and tricks so you look unique anywhere you go! </p>
                     </div>
-
-                    <div className=" flex items-center justify-between mt-4">
+                    <div className=" flex items-center justify-between mx-auto space-x-6">
                         <div className='modelbtn' onClick={()=>{router.push('/login'),dispatch(loginclose())}} >Log In</div>
                         <div className='modelbtn' onClick={()=>{dispatch(loginclose())}}>Cancel</div>
+                    </div>
                     </div>
                     </Dialog.Overlay>
            </Transition.Child>

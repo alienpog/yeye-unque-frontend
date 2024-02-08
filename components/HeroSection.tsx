@@ -1,10 +1,11 @@
 
+import BACKEND_URL from '@/src/apiConfig';
 import VideoPlayer from './VideoPlayer'
 interface player{
   video: object;
 }
 async function fetchvideo() {
-  const response = await fetch(`${process.env.BACKEND_URL}/videoplay/`,{next: {revalidate:60*60*24}})
+  const response = await fetch(`${BACKEND_URL}videoplay/`,{cache:"no-cache"})
   const data:player[] = await response.json()
   return data
 }

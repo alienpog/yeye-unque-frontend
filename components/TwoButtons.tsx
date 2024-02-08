@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { useRouter } from 'next/navigation'
+import BACKEND_URL from '@/src/apiConfig'
 
 interface props{
   prev?: string,
@@ -11,8 +12,8 @@ interface props{
 
 function TwoButtons({prev, next,product,loading}: props) {
   // http://yeye-unique-backend-production.up.railway.app/
-  const changeprev = prev?.replace("http://127.0.0.1:8000/"+product+"/?page=","")
-  const changenext = next?.replace("http://127.0.0.1:8000/"+product+"/?page=","")
+  const changeprev = prev?.replace(BACKEND_URL + product + "/?page=","")
+  const changenext = next?.replace(BACKEND_URL + product + "/?page=","")
   const router =useRouter()
   
   return (

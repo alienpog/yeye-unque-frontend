@@ -29,13 +29,13 @@
       @apply flex flex-col space-y-3 md:space-y-4 lg:space-y-6
     }
     .modelbtn{
-      @apply bg-[#E7D6CE] text-[10px] font-semibold md:text-sm py-1 px-3 md:py-3 md:px-8 rounded-full shadow-lg hover:shadow-none transition-shadow duration-300 ease-out cursor-pointer
+      @apply w-full bg-[#E7D6CE] text-[10px] text-center font-semibold md:text-sm py-1  md:py-3 md:px-8 rounded-full shadow-lg hover:text-white hover:shadow-none transition-all duration-300 ease-out cursor-pointer
     }
     .spaceCon{
      @apply flex flex-col space-y-4 sm:space-y-16 lg:space-y-24
     }
     .small-image{
-      @apply max-w-[60px] max-h-[100px] object-contain cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out
+      @apply max-w-[60px] max-h-[100px] object-contain cursor-pointer rounded-lg hover:scale-110 transition-all duration-300 ease-in-out
     }
     .twobuttons{
       @apply text-xs text-[#FF0000] font-bold py-2 px-6 border-2 border-[#E7D6CE] 
@@ -53,8 +53,37 @@
     .nav-icon{
       @apply h-[20px] lg:h-[24px] object-contain text-[#333333]
     }
+    .phone-text{
+     @apply w-full text-xs font-light text-[#FFEAEA] mb-2
+    }
+    .phone-product{
+      @apply font-semibold text-white
+    }
+  .admin-nav-icon{
+    @apply w-4 h-4 group-hover:text-[#ff0000]
+  }
+  .admin-nav-number{
+    @apply font-medium text-[#333333] text-xs
+  }
+  .admin-nav-red{
+    @apply text-[#ff0000]
+  }
+  .Admin-Product-Button
+  {@apply text-white font-medium text-xs text-center hover:shadow-lg  hover:bg-[#E7D6CE]
+     rounded-full w-full py-1 hover:text-[#333333] transition-all duration-300 ease-in cursor-pointer}
+  .Admin-Table-H{
+    @apply min-w-[250px] max-w-[300px] text-center 
+  }
+  .Admin-Table-H2{
+    @apply min-w-[350px] max-w-[400px] text-center 
+  }
   
-    
+  .Admin-Pin{
+    @apply flex items-center space-x-2 text-[#49BEFF] text-[10px] hover:underline px-2 cursor-pointer
+  }
+  .Admin-inputfield{
+    @apply shadow-lg py-2 sm:py-3 pl-2 h-full w-[250px] bg-[#F2F2F2] flex-1 flex items-center justify-start rounded-lg border-2 border-[#E8D7D0]
+  }
 }
 
 
@@ -67,6 +96,9 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
 .heightview{
   height: calc(100vh - 80px)
 }
@@ -94,4 +126,22 @@
   box-shadow: none;
 }
 
+.textarea{
+  resize: none;
+}
+#hover-image{
+  width: 100%;
+  max-height: 400px;
+}
 
+/* Chrome, Safari, Edge, Opera */
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+} */
+
+/* Firefox */
+/* input[type=number] {
+  -moz-appearance: textfield;
+} */

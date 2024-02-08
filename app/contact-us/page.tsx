@@ -4,6 +4,7 @@ import IconBxlInstagramAlt from "@/components/Icons/Instagram";
 import IconBxlTiktok from "@/components/Icons/TikTok";
 import MiniCon from "@/components/MiniCon";
 import SectionHeader from "@/components/SectionHeader";
+import BACKEND_URL from "@/src/apiConfig";
 import { EnvelopeIcon,MapPinIcon, PhoneArrowDownLeftIcon } from "@heroicons/react/24/solid";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -13,13 +14,15 @@ import { ClassicSpinner } from "react-spinners-kit";
 interface User{
     name: string | null ;
     gmail: string | null;
+    phone: string | null;
+    address: string | null
 }
 
 
 function ContactUs() {
     const [name,Setname] = useState<any>("")
     const [email,Setemail] = useState<any>("")
-    const [number,Setnumber] = useState("")
+    const [number,Setnumber] = useState<any>("")
     const [error,Seterror] = useState("")
     const [done,Setdone] = useState("")
     const [loading, Setloading]= useState(false)
@@ -28,7 +31,7 @@ function ContactUs() {
     const {data: session} = useSession();
     useEffect(()=>{
         async function getUserData(){
-            const res =await fetch(`http://127.0.0.1:8000/gettingform/`,
+            const res =await fetch(`${BACKEND_URL}gettingform/`,
             {
                 method: "POST",
                 headers: {
@@ -39,6 +42,7 @@ function ContactUs() {
             const data: User = await res.json()
             Setname(data?.name)
             Setemail(data?.gmail)
+            Setnumber(data?.phone)
         }
         getUserData()  
     },[session])
@@ -55,7 +59,7 @@ function ContactUs() {
         if(domain == "@gmail.com"){
             if(number.match(phoneno)){
                 // https://yeye-unique-backend-production.up.railway.app/
-                const res= await fetch(`http://127.0.0.1:8000/postingform/`,
+                const res= await fetch(`${BACKEND_URL}postingform/`,
                 {
                     method: "POST",
                     headers: {

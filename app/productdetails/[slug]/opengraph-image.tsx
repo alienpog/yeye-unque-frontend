@@ -1,4 +1,5 @@
 import { Item } from "@/product"
+import BACKEND_URL from "@/src/apiConfig";
 import { ImageResponse } from "next/server";
 
 
@@ -17,7 +18,7 @@ interface props {
 
 
 async function fetchDeta (slug : string) {
-    const res = await fetch(`${process.env.BACKEND_URL}/product/${slug}`, { cache:"no-cache"});
+    const res = await fetch(`${BACKEND_URL}product/${slug}`, { cache:"no-cache"});
     const data : Item = await res.json();
     return data
 }

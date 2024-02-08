@@ -7,6 +7,7 @@ import { Item2 } from '@/product';
 import { useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation';
 import SectionHeader from '@/components/SectionHeader';
+import BACKEND_URL from '@/src/apiConfig';
 
 interface props{
   params:{
@@ -25,12 +26,12 @@ function Products({params:{product}}:props){
   useEffect(()=>{
     const queryproducts = async() => {
       // http://yeye-unique-backend-production.up.railway.app/
-      if(page == 'http://127.0.0.1:8000/'+product+'/'){
-        return  (page.replace('http://127.0.0.1:8000/'+product+'/',''),
+      if(page ==  BACKEND_URL +product+'/'){
+        return  (page.replace( BACKEND_URL + product +'/',''),
                  router.replace('/fashion/'+product)
         )          
       }
-      const url = page?"http://127.0.0.1:8000/"+product+"/?page="+ page : 'http://127.0.0.1:8000/'+product;
+      const url = page? BACKEND_URL + product + "/?page="+ page :  BACKEND_URL + product;
       const res = await fetch(url);
       const data  = await res.json();
       Setproduct(data)
@@ -41,7 +42,7 @@ function Products({params:{product}}:props){
 
   if (isLoading)
   return( 
-    <div className=" w-full h-screen ">
+    <div className=" w-full h-screen">
       <img src="/images/logo-animi-red.gif" className="h-24 object-contain absolute top-[50%] left-[50%] -translate-x-2/4 -translate-y-2/4" alt="loader" />
     </div>
     ) 
@@ -53,14 +54,17 @@ function Products({params:{product}}:props){
           <SectionHeader conheader="Our Design" red={false}/>
       <MiniCon>
         <div className='w-full flex items-center justify-between max-w-7xl mx-auto mb-2 sm:mb-4'>
-        <h2 className='text-xs md:text-sm text-black font-bold'>Products</h2> 
-        <span className='text-xs md:text-sm text-black font-bold'>{products?.count}</span>
+        <div className='flex items-center'>
+          <h2 className='text-xs md:text-sm text-[#444444] font-medium'>Products</h2>
+          <h2 className='text-xs md:text-sm text-[#444444] font-medium'>/{product}</h2>  
+        </div>  
+        <span className='text-xs md:text-sm text-[#ff0000] font-bold'>{products?.count}</span>
         </div>
         {products?.count != 0 ?(
           <>
           <div className='DesignCon'>
-            { randomProducts?.map(({id,name,image,price,old_price,modelimages,slug})=>(
-              <ProductItem key={id} id={id} name={name} image={image} price={price} old_price={old_price} modelimages={modelimages} slug={slug} truecon={false}/>
+            { randomProducts?.map(({id,name,image,price,old_price,modelimages,slug, measurement})=>(
+              <ProductItem key={id} id={id} name={name} image={image} price={price} old_price={old_price} modelimages={modelimages} measurement={measurement} slug={slug} truecon={false}/>
             )) }
           </div>
           <TwoButtons prev={products?.previous} next={products?.next} product={product} loading={setIsLoading} />
@@ -70,10 +74,10 @@ function Products({params:{product}}:props){
           <div className=' grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto my-6 sm:my-24 items-start justify-center gap-12 md:gap-24 mb-6'>
             <img src='/images/no_data@4x.png' width={500} height={500} alt='no product' className='w-full object-contain mb-20 sm:mb-0'/>
             <div className='flex flex-col space-y-4 md:space-y-8 text-left'>
-            <h2 className='text-2xl md:text-5xl text-black font-bold'>Product coming soon...</h2>
+            <h2 className='text-2xl md:text-5xl text-black font-bold'>Product Not Found</h2>
              <div className="text-xs text-white bg-[#9C0F0F] font-bold py-2 px-6 rounded-full text-center shadow-md hover:shadow-none
               transition-all duration-300 ease-in-out cursor-pointer w-64 "onClick={()=>router.push("/fashion/allproducts")}>
-              All Designs
+              Go Back To All Designs
             </div>
           </div>
           </div>

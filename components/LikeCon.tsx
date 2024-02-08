@@ -5,6 +5,7 @@ import { HeartIcon as RedHeartIcon} from '@heroicons/react/24/solid'
 import { useSession } from 'next-auth/react';
 import { loginopen } from '@/src/redux/slices/loginSlice';
 import { useAppDispatch } from '@/src/redux/hooks';
+import BACKEND_URL from '@/src/apiConfig';
 
 interface props{
     id:number;
@@ -20,7 +21,7 @@ function LikeCon({id, details}: props) {
    // posting the user email to check if he/she liked  the product
     useEffect(()=>{
       const fecthlikes = async()=>{
-        const res= await fetch(`http://127.0.0.1:8000/productlikes/${id}/`,
+        const res= await fetch(`${BACKEND_URL}productlikes/${id}/`,
         {
           method: 'POST',
           headers: {
@@ -46,19 +47,19 @@ function LikeCon({id, details}: props) {
       }
       return number.toString();
     }
-    const formattedNumber = formatNumber(count);
+  
 
 
     // product likes count
       useEffect(()=>{
         async function countlikes(){
-          const res= await fetch(`http://127.0.0.1:8000/likescount/${id}`)
+          const res= await fetch(`${BACKEND_URL}likescount/${id}`)
           const data = await res.json()
           Setcount(data)
         }
         const interval = setInterval(() => {
          countlikes()
-        },3000);
+        },100000000000);
         return () => clearInterval(interval);
       },[id])
       
@@ -66,7 +67,7 @@ function LikeCon({id, details}: props) {
      // posting the user email to like the product
         const postlike = async(action: string)=>{
           if(!session)return dispatch(loginopen());
-          const res= await fetch(`http://127.0.0.1:8000/postlike/${id}/`,
+          const res= await fetch(`${BACKEND_URL}postlike/${id}/`,
           {
            method: 'POST',
            headers: {
@@ -80,13 +81,14 @@ function LikeCon({id, details}: props) {
            Setlike(data)
 
          }
-     
+         
+         const formattedNumber = formatNumber(count? count : 0);
   return (
     <div className='flex space-x-1 text-white items-center'>
         {like?
-        <RedHeartIcon className={`w-6 h-6 hover:scale-150 transition ease-in-out duration-300 cursor-pointer text-[#ff0000] ${details && " sm:w-7 sm:h-7"}`} onClick={() =>{postlike('unlike'),session ? (Setlike(false),Setcount((prev)=>(prev > 0 ? prev-1: 0 ))):null}}/>
+        <RedHeartIcon className={`w-6 h-6 hover:scale-150 transition ease-in-out duration-300 cursor-pointer text-[#ff0000] ${details && " sm:w-7 sm:h-7"}`} onClick={() =>{postlike('unlike'),session ? (Setlike(false),Setcount((prev)=>(prev > 0 ? prev-1: 0 ))):0}}/>
         :
-        <HeartIcon className={`w-6 h-6 hover:scale-150 transition ease-in-out duration-300 cursor-pointer ${details && " sm:w-7 sm:h-7 text-black"}`} onClick={() => {postlike('like'),session ? (Setlike(true),Setcount((prev)=>(prev+1))):null}}/>
+        <HeartIcon className={`w-6 h-6 hover:scale-150 transition ease-in-out duration-300 cursor-pointer ${details && " sm:w-7 sm:h-7 text-black"}`} onClick={() => {postlike('like'),session ? (Setlike(true),Setcount((prev)=>(prev+1))):0}}/>
         }  
         <p className={`text-xs font-medium ${details && "sm:text-sm text-black"}`}>{formattedNumber}</p>
     </div>
