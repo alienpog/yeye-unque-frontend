@@ -63,7 +63,7 @@ function LikeCon({id, details}: props) {
         return () => clearInterval(interval);
       },[id])
       
-
+     // texting github account
      // posting the user email to like the product
         const postlike = async(action: string)=>{
           if(!session)return dispatch(loginopen());
