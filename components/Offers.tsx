@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper";
+// import { Autoplay } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -98,7 +98,7 @@ function Offers({show,active,search}:props ) {
     </div>
     )}
     {!active &&
-      <Swiper className={`flex w-full item-center justify-center py-[1px] ${!search? 'opacity-1 h-full':'opacity-0 h-0'} transition-all duration-300 ease-in-out `} modules={[Autoplay]} loop={true} autoplay= {{delay:4000, }}>
+      <Swiper className={`flex w-full item-center justify-center py-[1px] ${!search? 'opacity-1 h-full':'opacity-0 h-0'} transition-all duration-300 ease-in-out `} loop={true} autoplay= {{delay:4000, }}>
       {actions.map((actions,index) =>( <SwiperSlide className='flex w-full item-center justify-center'key={index}><div className="w-full flex items-center justify-center"><h1 className="bg-[#9C0F0F] px-2 w-[200px] sm:w-[250px] truncate text-center text-white rounded-md font-semibold
       text-xs md:text-sm py-1 sm:py-2 " >{actions.offer}</h1></div></SwiperSlide> ))} 
     </Swiper>

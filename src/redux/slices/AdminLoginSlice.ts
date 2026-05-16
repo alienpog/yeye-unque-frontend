@@ -5,7 +5,7 @@ type AdminLoginState = {
 };
 
 const initialState = {
-  adminstatus: false
+  adminstatus: true
 } as AdminLoginState;
 
 export const adminlogin = createSlice({

@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Navigation,Pagination } from "swiper";
+// import { Navigation,Pagination } from "swiper";
 import { useAppSelector } from "../src/redux/hooks";
 import { RootState } from '@/src/redux/store'
 import {closeitem } from "@/src/redux/slices/openSlice";
@@ -37,7 +37,7 @@ function ModelImage() {
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto ">
-             <Swiper className="flex w-full h-full item-center justify-center" navigation={true} pagination={true} loop={true} modules={[Navigation,Pagination]} > 
+             <Swiper className="flex w-full h-full item-center justify-center" navigation={true} pagination={true} loop={true} > 
                 {products?.images?.map((product :string, index : number)=> (
                   <SwiperSlide key={index} className='flex w-full item-center justify-center'>                  
                   <Transition.Child

@@ -6,6 +6,7 @@ export interface Item{
     old_price: number | null,
     description: string,
     description_span?: string;
+    stock?: num;
     image: string,
     likescount?: number,
     modelimages?: string[],
