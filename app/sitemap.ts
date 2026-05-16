@@ -4,7 +4,7 @@ import BACKEND_URL from "@/src/apiConfig";
 export default async function sitemap(){
     const baseurl = "https://yeyeunique.com";
     // https://yeye-unique-backend-production.up.railway.app/
-    const res = await fetch(`${BACKEND_URL}none`,{ next: { revalidate: 3600 }})
+    const res = await fetch(`${BACKEND_URL}products`,{ next: { revalidate: 3600 }})   // none
     const data: Item[] = await res.json();
     const producturls = data.map((product)=>({
      url: `${baseurl}/productdetails/${product.slug}/`,lastModified: new Date()
