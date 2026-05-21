@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/only-admin-allowed/"],
     },
 
     sitemap: "https://yeyeunique.com/sitemap.xml",

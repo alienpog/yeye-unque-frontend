@@ -124,6 +124,9 @@ you will see all screenshot images inside screenshots/code/ folder
 ### 🖼️ Sitemap.xml Code
 - [Sitemap.xml](screenshots/code/sitemap-setup-code.png)
 
+### 🖼️ GoogleAnalytics Code
+- [GoogleAnalytics](screenshots/code/google-analytics.png)
+
 ### 🖼️ Metadeta Static Code
 - [Metadeta Static](screenshots/code/metadeta-setup-code.png)
 

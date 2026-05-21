@@ -7,7 +7,7 @@ export default async function sitemap(){
     const res = await fetch(`${BACKEND_URL}products`,{ next: { revalidate: 3600 }})   // none
     const data: Item[] = await res.json();
     const producturls = data.map((product)=>({
-     url: `${baseurl}/productdetails/${product.slug}/`,lastModified: new Date()
+     url: `${baseurl}/product-details/${product.slug}/`,lastModified: new Date()  // - not there
     }))
     
     return[

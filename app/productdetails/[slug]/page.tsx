@@ -15,7 +15,7 @@ export async function generateMetadata(
   { params: {slug}}: props
 ): Promise<Metadata> {
 
-  const product = await fetchProduct(slug)
+  const product = await fetchProduct(slug)   
  
   if(!product) return {
     title: "Not Found",
@@ -25,7 +25,7 @@ export async function generateMetadata(
     title: product.Meta_Title,
     description: product.Meta_description,
     alternates:{
-      canonical: `https://yeyeunique.com/productdetails/${slug}`
+      canonical: `https://yeyeunique.com/productdetails/${slug}`    //https://yeyeunique.com/productdetails/bags?next=2&prev=1
     },
     robots: {
       index: true,
