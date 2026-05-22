@@ -210,11 +210,6 @@ This system is designed to:
 
 ---
 
-## 📬 Contact
-
-
----
-
 ## ⚡ Summary
 
 Yeye Unique is not just an e-commerce platform — it is a **behavior-driven shopping ecosystem** designed to increase sales through psychology, gamification, and intelligent user engagement.
