@@ -136,8 +136,8 @@ you will see all screenshot images inside screenshots/code/ folder
 ### 🖼️ OpenGragh Code
 - [OpenGragh](screenshots/code/opengraph-setup-code.png)
 
-### 🖼️ SERP Features Code
-- [SERP Features](screenshots/code/serp-setup-code.png)
+### 🖼️ Schema Code
+- [Schema Features](screenshots/code/schema-setup-code.png)
 
 ### SEO Tools Integration:
 - Google Search Console
